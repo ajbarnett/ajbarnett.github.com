@@ -47,15 +47,15 @@ body {
 }
 .page { 
 	margin: 100px auto; 
-	width: 720px; 
-	padding-left:240px; 
+	width: 680px; 
+	padding-left:180px; 
 	position: relative;
 }
 .main-nav {
 	position: absolute;
 	left: 0; 
 	top: 135px;
-	width: 200px;
+	width: 140px;
 }
 .main-nav li {
 	text-align: right;
