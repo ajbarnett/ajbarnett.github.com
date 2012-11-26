@@ -1,6 +1,7 @@
 var Scrolls = function($el, config) {
 	this.$nav = $el;
 	this.config = config;
+	this.spying = true;
 
 	this.init();
 };
@@ -23,11 +24,12 @@ Scrolls.prototype.bindClick = function(){
 			$target = $(href);
 
 		if ($target.length) {
+			self.spying = false;
 			$('html, body').animate({
 				scrollTop: $target.offset().top - config.offset
 			}, 500, function(){
-				//self.activateNav($this);
-				window.location.hash = href;
+				self.activateNav($this);
+				self.spying = true;
 			});
 		}
 	});
@@ -65,6 +67,8 @@ Scrolls.prototype.bindSpyer = function(){
 		top;
 
 	$(window).scroll($.throttle(250, function(){
+		if (!self.spying) { return; }
+
 		top = $(this).scrollTop();
 
 		$.each(sections, function(i, s){
@@ -106,6 +110,7 @@ Scrolls.prototype.activateNav = function(target){
 	}
 	if ($target.length) {
 		$target.addClass('active').closest('li').siblings().find('.active').removeClass('active');
+		window.location.hash = $target.attr('href');
 	}
 };
 
