@@ -40,6 +40,7 @@ a:hover { color: #969e44; }
 small { font-size: 0.8em;}
 
 .hide { display: none; }
+.offpage { position: fixed; top: -1000px; }
 
 .cf:before,
 .cf:after {
@@ -104,6 +105,11 @@ body {
 .sec h2 {
 	margin-left: -15px;
 }
+
+.slides { position: relative; background-color: #1D1E24; box-shadow: inset 0 0 50px 0 rgba(0, 0, 0, 0.8); padding: 20px; }
+.slides .slide { width: 100%; height: 100%; }
+.slides .slide img { position: relative; top: 50%; left: 50%; }
+#home-slides { width: 630px; height: 480px;}
 
 
 h1 { font-size: 3em; margin: 2em 0; }
