@@ -20,46 +20,59 @@ Slide.prototype.init = function() {
 		if (config.autostart) {
 			this.play();
 		}
+		this.load(1); 
 	}
 };
 
 Slide.prototype.play = function() {
-
+	var self = this;
+	this.interval = setInterval(function(){
+		self.advance();
+		self.load(self.i + 1); //preload the next one
+	}, this.config.speed);
 };
 
 Slide.prototype.pause = function() {
-
+	clearInterval(this.interval);
 };
 
 Slide.prototype.advance = function() {
-
+	this.i = this.i + 1;
+	this.goTo(this.i);
 };
 
 Slide.prototype.recede = function() {
+	this.i = this.i - 1;
+	this.goTo(this.i);
+};
 
+Slide.prototype.transition = function($newSlide){
+	var self = this;
+
+	if (!$newSlide.length) { 
+		return;
+	}
+
+	var $current = self.$el.children('.slide').not('.hide'),
+		fadeNew = function(){ 
+			$newSlide.hide().removeClass('hide').fadeTo(400, 1); 
+		};
+
+	if ($current.length) {
+		$current.fadeTo(300, 0, function(){
+			$(this).addClass('hide');
+			fadeNew();
+		});
+	}
+	else {
+		fadeNew();
+	}
 };
 
 Slide.prototype.goTo = function(i) {
 	var self = this,
 		slides = this.config.slides,
-		slide,
-		switchEm = function($newSlide) {
-			if (!$newSlide.length) { 
-				return;
-			}
-
-			var $current = self.$el.children('.slide').not('.hide'),
-				fadeNew = function(){ 
-					$newSlide.fadeTo(400, 1); //you were here
-				};
-
-			if ($current.length) {
-				$current.fadeTo(300, 0, fadeNew);
-			}
-			else {
-				fadeNew();
-			}
-		};
+		slide;
 
 	if (i < 0 || i >= slides.length) {
 		return;
@@ -68,11 +81,14 @@ Slide.prototype.goTo = function(i) {
 	slide = slides[i];
 
 	if (slide.$el !== undefined) {
-		switchEm(slide.$el);
+		this.transition(slide.$el);
 	}
-	else if(!slide.loading) {
+	else if (slide.loading) {
+		// ?
+	}
+	else {
 		this.load(i, function($newSlide){
-			switchEm($newSlide);
+			self.transition($newSlide);
 		})
 	}
 };
@@ -129,7 +145,7 @@ Slide.prototype.load = function(i, callback) {
 			marginLeft: (scaledWidth * -.5) + "px"
 		});
 		$slide.removeAttr('id').removeClass('offpage').addClass('hide');
-		console.log("loaded: ", $slide);
+
 		slide.$el = $slide;
 		if (callback !== undefined) {
 			callback($slide);
