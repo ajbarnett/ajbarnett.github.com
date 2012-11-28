@@ -16,6 +16,7 @@ Slide.prototype.init = function() {
 		slides = config.slides;
 
 	if (slides.length) {
+		this.addControls();
 		this.goTo(0);
 		if (config.autostart) {
 			this.play();
@@ -30,20 +31,73 @@ Slide.prototype.play = function() {
 		self.advance();
 		self.load(self.i + 1); //preload the next one
 	}, this.config.speed);
+	this.isPlaying = true;
 };
 
 Slide.prototype.pause = function() {
 	clearInterval(this.interval);
+	this.isPlaying = false;
+};
+
+Slide.prototype.resetInterval = function(){
+	if (this.isPlaying) {
+		this.pause();
+		this.play();
+	}
 };
 
 Slide.prototype.advance = function() {
 	this.i = this.i + 1;
 	this.goTo(this.i);
+	this.resetInterval();
 };
 
 Slide.prototype.recede = function() {
 	this.i = this.i - 1;
 	this.goTo(this.i);
+	this.resetInterval();
+};
+
+Slide.prototype.addControls = function(){
+	var a = [];
+
+	a.push('<div class="icon pause"></div>');
+	a.push('<div class="icon prev"></div>');
+	a.push('<div class="icon next"></div>');
+
+	this.$el.append(a.join(''));
+	this.bindControlEvents();
+};
+
+Slide.prototype.bindControlEvents = function(){
+	var $el = this.$el,
+		self = this;
+
+	$el.mouseenter(function(){
+		$(this).find('.icon').fadeTo(200, 0.7);
+	}).mouseleave(function(){
+		$(this).find('.icon').fadeTo(200, 0);
+	});
+
+	$el.on('click', '.icon', function(e){
+		e.preventDefault();
+		var $icon = $(e.target);
+
+		if ($icon.hasClass('play')) {
+			self.play();
+			$icon.removeClass('play').addClass('pause');
+		}
+		else if ($icon.hasClass('pause')) {
+			self.pause();
+			$icon.removeClass('pause').addClass('play');
+		}
+		else if ($icon.hasClass('prev')) {
+			self.recede();
+		}
+		else if ($icon.hasClass('next')) {
+			self.advance();
+		}
+	});
 };
 
 Slide.prototype.transition = function($newSlide){
@@ -53,14 +107,14 @@ Slide.prototype.transition = function($newSlide){
 		return;
 	}
 
-	var $current = self.$el.children('.slide').not('.hide'),
+	var $current = self.$el.children('.slide:not(.hide)'),
 		fadeNew = function(){ 
 			$newSlide.hide().removeClass('hide').fadeTo(400, 1); 
 		};
 
 	if ($current.length) {
 		$current.fadeTo(300, 0, function(){
-			$(this).addClass('hide');
+			$(this).addClass('hide').hide();
 			fadeNew();
 		});
 	}
@@ -85,6 +139,7 @@ Slide.prototype.goTo = function(i) {
 	}
 	else if (slide.loading) {
 		// ?
+		console.log('still loading...');
 	}
 	else {
 		this.load(i, function($newSlide){
@@ -157,7 +212,7 @@ Slide.prototype.load = function(i, callback) {
 $.fn.slide = function(config) {
 	var defaults = {
 		slides: [],
-		speed: 2000,
+		speed: 4000,
 		autostart: true
 	};
 	var config = $.extend(defaults, config);
@@ -169,7 +224,7 @@ $.fn.slide = function(config) {
 $(document).ready(function(){
 	$('#home-slides').slide({
 		slides: (function(){
-			var count = 10,
+			var count = 93,
 				i = 0,
 				a = new Array(count);
 			while (i < count) {

@@ -110,7 +110,7 @@ Scrolls.prototype.activateNav = function(target){
 	}
 	if ($target.length) {
 		$target.addClass('active').closest('li').siblings().find('.active').removeClass('active');
-		window.location.hash = $target.attr('href');
+		//window.location.hash = $target.attr('href');
 	}
 };
 
