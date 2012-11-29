@@ -109,13 +109,27 @@ body {
 .slides { position: relative; overflow:hidden; border-radius: 3px; background-color: #1D1E24; box-shadow: inset 0 0 50px 0 rgba(0, 0, 0, 0.8); padding: 20px; }
 .slides .slide { width: 100%; height: 100%; }
 .slides .slide img { position: relative; top: 50%; left: 50%; }
-#home-slides { width: 630px; height: 480px;}
+#home-slides, #picnic-slides { width: 630px; height: 480px;}
+
+.slides .controls {
+	background-color: #1D1E24;
+	z-index: 1000;
+	position: absolute;
+	width: 150px;
+	height: 60px;
+	left: 50%;
+	bottom: -55px;
+	margin-left: -75px;
+	opacity: 0.6;
+	border-radius: 5px 5px 0 0;
+}
+
+.slides .controls:hover { opacity: 0.7; }
 
 .slides .icon {
+	background: transparent url(../img/sprite.png) no-repeat 0 0; 
 	position: absolute;
-	opacity: 0.7;
-	z-index: 1000;
-	display: none;
+	opacity: 0.6;
 	cursor: pointer;
 }
 
@@ -123,40 +137,42 @@ body {
 	opacity: 1 !important;
 }
 
-.play { 
-	background: transparent url(../img/play.png); 
-	width: 128px; 
-	height: 128px; 
+.slides .play { 
+	background-position: -27px 0;
+	width: 48px; 
+	height: 48px; 
 	left: 50%; 
-	margin-left: -64px; 
-	bottom: -12px; 
+	margin-left: -24px;
+	top: 50%;
+	margin-top: -24px;
 }
 
-.pause { 
-	background: transparent url(../img/pause.png); 
-	width: 128px; 
-	height: 128px; 
+.slides .pause { 
+	background-position: -75px 0;
+	width: 48px; 
+	height: 48px; 
 	left: 50%; 
-	margin-left: -64px; 
-	bottom: -12px; 
+	margin-left: -24px;
+	top: 50%;
+	margin-top: -24px;
 }
 
-.prev {
-	background: transparent url(../img/prev.png);
-	width: 48px;
-	height: 48px;
-	left: 50%;
-	bottom: 42px;
-	margin-left: -100px;
+.slides .prev {
+	background-position: 0 -24px;
+	width: 30px; 
+	height: 24px; 
+	left: 5px; 
+	top: 50%;
+	margin-top: -12px;
 }
 
-.next {
-	background: transparent url(../img/next.png);
-	width: 48px;
-	height: 48px;
-	right: 50%;
-	bottom: 42px;
-	margin-right: -100px;
+.slides .next {
+	background-position: 0 0;
+	width: 30px; 
+	height: 24px; 
+	right: 5px; 
+	top: 50%;
+	margin-top: -12px;
 }
 
 h1 { font-size: 3em; margin: 2em 0; }
