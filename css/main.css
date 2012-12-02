@@ -15,7 +15,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 	color: #082537;
 	vertical-align: baseline;
 }
@@ -53,39 +53,81 @@ small { font-size: 0.8em;}
 .cf {
     *zoom: 1;
 }
-
+html, body { height: 100%; }
 body { 
 	background-color: #f9f7f3;
 }
 .page { 
-	margin: 10px auto; 
+	margin: 0 auto; 
+	padding: 1% 0;
+	height: 97%;
 	width: 860px; 
 	position: relative;
+	overflow: hidden;
+}
+
+.header {
+	position: relative;
+	background-color: #0A143C;
+	height: 24%;
+}
+.header h1 {
+	font-size: 22px;
+	position: absolute;
+	right: 30px;
+	bottom: 36px;
+	color: white;
+}
+.header h6 {
+	font-size: 11px;
+	color: white;
+	font-weight: normal;
+	position: absolute;
+	right: 30px;
+	bottom: 20px;
+}
+.trees { 
+	background: transparent url(../img/trees.png) no-repeat;
+	width: 160px;
+	height: 146px;
+	position: absolute;
+	bottom: 1px;
+	left: 30px;
+}
+
+.footer { 
+	display: none;
+	clear: both;
+	background-color: #0A143C;
+	height: 3%;
+}
+.footer h5 { 
+	color: white;
+	text-align: right;
+	margin-right: 30px;
 }
 
 .left-rail {
-	float: left;
-	margin-left: 30px;
-	width: 130px;
 	min-height: 1px;
+	float: left;
 }
 
 .main-rail {
 	float: left;
 	margin-left: 30px;
-	width: 670px; 
+	width: 620px; 
+	padding-right: 30px;
 	min-height: 1px;
+	height: 74%;
+	overflow-y: scroll;
 }
 
 
 .main-nav {
-	margin-top: 250px;
-	width: 130px;
+	margin-top: 50px;
+	width: 180px;
 }
-.main-nav.popped { 
-	position: fixed;
-	margin-top: 100px;
-}
+
 .main-nav li {
 	text-align: right;
 }
@@ -97,19 +139,26 @@ body {
 }
 .main-nav .active {
 	font-weight: bold;
+	text-decoration: underline;
 }
 .sec { 
 	margin-bottom: 3em;
-	margin-left: 15px;
 }
 .sec h2 {
-	margin-left: -15px;
+
 }
 
-.slides { position: relative; overflow:hidden; border-radius: 3px; background-color: #1D1E24; box-shadow: inset 0 0 50px 0 rgba(0, 0, 0, 0.8); padding: 20px; }
+.slides { 
+	position: relative; 
+	overflow:hidden;  
+	background-color: #1D1E24; 
+	box-shadow: inset 0 0 50px 0 rgba(0, 0, 0, 0.8); 
+	padding: 20px; 
+	margin-top: 20px;
+}
 .slides .slide { width: 100%; height: 100%; }
 .slides .slide img { position: relative; top: 50%; left: 50%; }
-#home-slides, #picnic-slides { width: 630px; height: 480px;}
+#home-slides, #picnic-slides { width: 580px; height: 420px;}
 
 .slides .controls {
 	background-color: #1D1E24;
@@ -120,11 +169,11 @@ body {
 	left: 50%;
 	bottom: -55px;
 	margin-left: -75px;
-	opacity: 0.6;
+	opacity: 0.7;
 	border-radius: 5px 5px 0 0;
 }
 
-.slides .controls:hover { opacity: 0.7; }
+.slides .controls:hover { opacity: 0.8; }
 
 .slides .icon {
 	background: transparent url(../img/sprite.png) no-repeat 0 0; 
@@ -175,7 +224,6 @@ body {
 	margin-top: -12px;
 }
 
-h1 { font-size: 3em; margin: 2em 0; }
 h2 { font-size: 2em; margin: 0 0 1em; }
 h3 { font-size: 1.5em; }
 p { margin-bottom: 30px; }

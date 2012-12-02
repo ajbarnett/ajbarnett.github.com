@@ -244,7 +244,7 @@ Slide.prototype.load = function(i, callback) {
 $.fn.slide = function(config) {
 	var defaults = {
 		slides: [],
-		speed: 4000,
+		speed: 3000,
 		autostart: true
 	};
 	var config = $.extend(defaults, config);
