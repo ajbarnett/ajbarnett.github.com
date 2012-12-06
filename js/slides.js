@@ -202,6 +202,7 @@ Slide.prototype.load = function(i, callback) {
 	html = '<div id="'+id+'" class="slide offpage"><img src="'+src+'"></div>';
 	this.$el.append(html);
 
+	var tries = 0;
 	$('#'+id+' img').load(function(){
 		var $img = $(this),
 			$slide = $img.closest('.slide'),
@@ -214,6 +215,13 @@ Slide.prototype.load = function(i, callback) {
 			wr = oldWidth / w,
 			hr = oldWheight / h,
 			ratio;
+
+		if ((oldWidth === 0 || oldWheight === 0) && tries < 3) {
+			tries++;
+			console.log('trying again');
+			$img.trigger('load');
+			return;
+		}
 
 		if (wr > 1 || hr > 1) {
 			ratio = Math.max(wr, hr);

@@ -24,7 +24,7 @@ TODO:
 					<img src="img/trees.png" class="trees"></img>
 			</header>
 
-			<div class="left-rail">
+			<div class="left-rail rail">
 				<nav class="main-nav">
 					<ul>
 						<li><a href="#home" class="active">Home</a></li>
@@ -38,15 +38,16 @@ TODO:
 						<li><a href="#contact">Contact Us</a></li>
 					</ul>
 				</nav>
+
+				<div class="callout hide">
+					<p><span id="countdown-days"></span> days to go</p>
+				</div>
 			</div>
 
-			<div class="main-rail">
+			<div class="main-rail rail">
 
 				<section class="sec" id="home">
-
-					<div class="slides" id="home-slides">
-						
-					</div>
+					<div class="slides" id="home-slides"></div>
 				</section>
 
 				<section class="sec" id="theday">
@@ -120,16 +121,12 @@ TODO:
 				</section>
 			</div>
 
-			<footer class="footer">
-				<h5>285 days until the wedding</h5>
-			</footer>
-
 		</div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="js/jquery.ba-throttle-debounce.min.js"></script>
+		<script src="js/main.js"></script>
 		<script src="js/scrolls.js"></script>
 		<script src="js/slides.js"></script>
-
 	</body>
 </html>
