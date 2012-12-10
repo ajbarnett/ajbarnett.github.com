@@ -21,12 +21,16 @@ Scrolls.prototype.bindClick = function(){
 		var $this = $(this),
 			config = self.config,
 			href = $this.attr('href'),
-			$target = $(href);
+			$target = $(href),
+			newTop = 0;
 
 		if ($target.length) {
 			self.spying = false;
+			if(href !== "#home") {
+				newTop = $target.offset().top - config.offset;
+			}
 			$('html, body').animate({
-				scrollTop: $target.offset().top - config.offset
+				scrollTop: newTop
 			}, 500, function(){
 				self.activateNav($this);
 				self.spying = true;
@@ -72,7 +76,7 @@ Scrolls.prototype.bindSpyer = function(){
 		top = $(this).scrollTop();
 
 		$.each(sections, function(i, s){
-			if (top >= s.top - offset && i + 1 < secLen && top < sections[i + 1].top - offset) {
+			if (top >= s.top - offset && (i + 1 === secLen || (i + 1 < secLen && top < sections[i + 1].top - offset))) {
 				self.activateNav(s.id);
 				return false;
 			}

@@ -39,15 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 6203,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/Documents/other/dev/fin/js/fin.js",
-			"settings":
-			{
-				"buffer_size": 4922,
+				"buffer_size": 6225,
 				"line_ending": "Windows"
 			}
 		},
@@ -72,7 +64,15 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 4020,
+				"buffer_size": 4069,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/scrolls.js",
+			"settings":
+			{
+				"buffer_size": 2642,
 				"line_ending": "Windows"
 			}
 		}
@@ -101,10 +101,10 @@
 	},
 	"file_history":
 	[
+		"/D/Documents/other/dev/fin/js/fin.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/scrolls.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/jquery.ba-throttle-debounce.min.js",
 		"/D/Dropbox/jbSlideshow/js/jbSlide.js",
-		"/D/Documents/other/dev/fin/js/fin.js",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
 		"/D/Documents/other/dev/fin/index.html",
@@ -164,7 +164,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -172,15 +172,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 6203,
+						"buffer_size": 6225,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								345,
-								345
+								332,
+								332
 							]
 						],
 						"settings":
@@ -196,32 +196,6 @@
 				},
 				{
 					"buffer": 1,
-					"file": "/D/Documents/other/dev/fin/js/fin.js",
-					"settings":
-					{
-						"buffer_size": 4922,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3531,
-								3531
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1410.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "js/main.js",
 					"settings":
 					{
@@ -248,7 +222,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "js/slides.js",
 					"settings":
 					{
@@ -275,19 +249,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 4020,
+						"buffer_size": 4069,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1656,
-								1656
+								2291,
+								2291
 							]
 						],
 						"settings":
@@ -296,7 +270,34 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 834.0,
+						"translation.y": 1036.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/scrolls.js",
+					"settings":
+					{
+						"buffer_size": 2642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2460,
+								2460
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1300.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
