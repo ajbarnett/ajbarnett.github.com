@@ -117,7 +117,7 @@ Scrolls.prototype.activateNav = function(target){
 $.fn.scrolls = function(options) {
 
 	var defaults = {
-		offset: 40
+		offset: 0
 	};
 
 	var config = $.extend(defaults, options);

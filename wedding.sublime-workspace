@@ -44,6 +44,14 @@
 			}
 		},
 		{
+			"file": "/D/Documents/other/dev/fin/js/fin.js",
+			"settings":
+			{
+				"buffer_size": 4922,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "js/main.js",
 			"settings":
 			{
@@ -156,7 +164,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -188,6 +196,32 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/D/Documents/other/dev/fin/js/fin.js",
+					"settings":
+					{
+						"buffer_size": 4922,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3531,
+								3531
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1410.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "js/main.js",
 					"settings":
 					{
@@ -214,7 +248,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/slides.js",
 					"settings":
 					{
@@ -241,7 +275,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "css/main.css",
 					"settings":
 					{
