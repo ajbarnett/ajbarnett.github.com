@@ -27,12 +27,18 @@ Slide.prototype.init = function() {
 };
 
 Slide.prototype.play = function() {
-	var self = this;
-	this.interval = setInterval(function(){
-		self.advance();
-		self.preload(); 
-	}, this.config.speed);
-	this.isPlaying = true;
+	var self = this,
+		speed = this.config.speed,
+		func = function(){
+			self.advance();
+			self.preload(self.i + 1); 
+		};
+
+	setTimeout(function(){
+		self.isPlaying = true;
+		func();
+		self.interval = setInterval(func, speed);
+	}, 400);
 };
 
 Slide.prototype.pause = function() {
@@ -40,28 +46,29 @@ Slide.prototype.pause = function() {
 	this.isPlaying = false;
 };
 
-Slide.prototype.resetInterval = function(){
-	if (this.isPlaying) {
-		this.pause();
-		this.play();
-	}
-};
-
 Slide.prototype.advance = function() {
-	var next = (this.i + 1) % this.numSlides;
+	var self = this,
+		next = (this.i + 1) % this.numSlides;
 	
 	this.i = next;
-	this.goTo(next);
-	this.resetInterval();
+	this.goTo(next)
+		.fail(function( msg ) {
+			console.log('failed to goTo ' + next + ': ' + msg);
+			self.advance();
+		});
 };
 
 Slide.prototype.recede = function() {
-	var i = this.i,
+	var self = this,
+		i = this.i,
 		next = (i === 0 ? this.numSlides : i) - 1;
 
 	this.i = next;
-	this.goTo(next);
-	this.resetInterval();
+	this.goTo(next)
+		.fail(function( msg ) {
+			console.log('failed to goTo ' + next + ': ' + msg);
+			self.recede();
+		});
 };
 
 Slide.prototype.addControls = function(){
@@ -98,9 +105,14 @@ Slide.prototype.bindControlEvents = function(){
 		}, 500);
 	});
 
-	$el.on('click', '.icon', function(e){
+	$el.find('.controls').on('click', '.icon', function(e){
 		e.preventDefault();
 		var $icon = $(e.target);
+
+		function pause(){
+			self.pause();
+			$icon.removeClass('pause').addClass('play');
+		}
 
 		if ($icon.hasClass('play')) {
 			self.play();
@@ -111,28 +123,34 @@ Slide.prototype.bindControlEvents = function(){
 			$icon.removeClass('pause').addClass('play');
 		}
 		else if ($icon.hasClass('prev')) {
+			$icon.siblings('.pause').removeClass('pause').addClass('play');
+			self.pause();
 			self.recede();
 		}
 		else if ($icon.hasClass('next')) {
+			$icon.siblings('.pause').removeClass('pause').addClass('play');
+			self.pause();
 			self.advance();
 		}
 	});
 };
 
-Slide.prototype.transition = function($newSlide){
+Slide.prototype.transition = function($newSlide){ // pass index instead?
 	var self = this;
 
 	if (!$newSlide.length) { 
+		console.log('no $newSlide');
+		console.log($newSlide);
 		return;
 	}
 
-	var $current = self.$el.children('.slide:not(.hide)'),
+	var $current = self.$el.children('.slide:not(.hide)'), 
 		fadeNew = function(){ 
-			$newSlide.hide().removeClass('hide').fadeTo(400, 1); 
+			$newSlide.hide().removeClass('hide').fadeIn(400); 
 		};
 
 	if ($current.length) {
-		$current.fadeTo(300, 0, function(){
+		$current.fadeOut(300, function(){
 			$(this).addClass('hide').hide();
 			fadeNew();
 		});
@@ -144,11 +162,12 @@ Slide.prototype.transition = function($newSlide){
 
 Slide.prototype.goTo = function(i) {
 	var self = this,
+		dfd = $.Deferred(),
 		slides = this.config.slides,
 		slide;
 
 	if (i < 0 || i >= slides.length) {
-		return;
+		return dfd.reject('i is out of range (' + i + ')');
 	}
 
 	slide = slides[i];
@@ -156,47 +175,72 @@ Slide.prototype.goTo = function(i) {
 	if (slide.$el !== undefined) {
 		this.transition(slide.$el);
 	}
-	else if (slide.loading) {
-		// ?
-		console.log('still loading...');
+	else {
+		this.load(i)
+			.then(function($newSlide){
+				self.transition($newSlide);
+				dfd.resolve();
+			})
+			.fail(function(msg){
+				dfd.reject('failed to load slide ' + i + ': ' + msg);
+			});
+	}
+
+	return dfd.promise();
+};
+
+Slide.prototype.preload = function(i) {
+	var self = this,
+		nextSlide = this.config.slides[i],
+		retries = 0,
+		pl = function(){
+			self.load(i)
+				.then(function(){
+					console.log('preload successful for ' + i);
+				})
+				.fail(function(msg){
+					console.log('preload failed for '+i+' : ' + msg);
+					if (++retries < 3) {
+						console.log('retrying preload');
+						pl();
+					}
+					else {
+						console.log('failed to preload ' + i);
+					}
+				});
+		};
+
+	if (nextSlide !== undefined && nextSlide.$el === undefined) {
+		pl(i);
 	}
 	else {
-		this.load(i, function($newSlide){
-			self.transition($newSlide);
-		})
+		console.log('no need to preload ' + i);
 	}
 };
 
-Slide.prototype.preload = function() {
-	var numSlides = this.config.slides.length || 0,
-		nextIndex = (this.i + 1) % numSlides;
-
-	this.load(nextIndex);
-};
-
-Slide.prototype.load = function(i, callback) {
+Slide.prototype.load = function(i) {
 	var self = this,
 		slides = this.config.slides,
 		slide,
 		html,
 		src,
+		dfd = $.Deferred(),
 		id = "s" + (+new Date);
 
 	if (i < 0 || i >= slides.length) {
-		return;
+		return dfd.reject('slide index is bad: ' + i);
 	}
 
 	slide = slides[i];
 
-	if (slide.loading || slide.$el !== undefined) {
-		return;
+	if (slide.$el !== undefined) {
+		return dfd.resolve(slide.$el);
 	}
 
-	slide.loading = true;
 	src = slide.src;
 
 	if (src === undefined || src.length === 0) {
-		return;
+		return dfd.reject('no src on this slide');
 	}
 
 	html = '<div id="'+id+'" class="slide offpage"><img src="'+src+'"></div>';
@@ -223,7 +267,7 @@ Slide.prototype.load = function(i, callback) {
 			return;
 		}
 
-		if (wr > 1 || hr > 1) {
+		if (wr > 1 || hr > 1) {                                                 
 			ratio = Math.max(wr, hr);
 			scaledWidth = oldWidth / ratio;
 			scaledHeight = oldWheight / ratio;
@@ -242,12 +286,32 @@ Slide.prototype.load = function(i, callback) {
 		$slide.removeAttr('id').removeClass('offpage').addClass('hide');
 
 		slide.$el = $slide;
-		if (callback !== undefined) { 
-			callback($slide);
-		}
+		dfd.resolve($slide);
+	}).error(function(){
+		dfd.reject('loading failed');
 	});
 
+	return dfd.promise();
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 $.fn.slide = function(config) {
 	var defaults = {

@@ -1,3 +1,7 @@
+if (typeof console === "undefined") {
+	console = {log:function(){},info:function(){}};
+}
+
 var Countdown = function(){
 	var $cd = $('#countdown-days'),
 		$container = $cd.closest('.countdown'),
@@ -5,7 +9,7 @@ var Countdown = function(){
 
 	setTimeout(function(){
 		$cd.text(daysleft);
-		$container.hide().removeClass('hide').fadeIn(500);
+		$container.hide().removeClass('hide').fadeIn(1000);
 	}, 200);
 };
 
