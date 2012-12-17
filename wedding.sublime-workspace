@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getNext"
+			],
+			[
 				"autostar",
 				"autostart"
 			],
@@ -18,10 +22,6 @@
 			[
 				"getTra",
 				"_getTranObj"
-			],
-			[
-				"get",
-				"getAmount"
 			],
 			[
 				"pro",
@@ -39,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7007,
+				"buffer_size": 7014,
 				"line_ending": "Windows"
 			}
 		},
@@ -47,7 +47,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 349,
+				"buffer_size": 440,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function(){"
 			}
@@ -56,7 +56,7 @@
 			"file": "js/slides.js",
 			"settings":
 			{
-				"buffer_size": 5352,
+				"buffer_size": 7717,
 				"line_ending": "Windows"
 			}
 		},
@@ -64,7 +64,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 4230,
+				"buffer_size": 4353,
 				"line_ending": "Windows"
 			}
 		},
@@ -101,6 +101,7 @@
 	},
 	"file_history":
 	[
+		"/D/Documents/GitHub/ajbarnett.github.com/js/slides2.js",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/html5shiv.js",
 		"/D/Documents/other/dev/fin/js/fin.js",
@@ -132,6 +133,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"console.log",
+			"lide2",
+			"isPlaying",
+			".$el",
+			"opacity",
+			"preload",
 			"3A6369",
 			"f9f3f1",
 			"fff7f3",
@@ -148,6 +155,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"//console.log",
+			"lide",
+			".$slide",
 			"F9F1F1",
 			"3A6369",
 			"f9f3f1",
@@ -165,7 +175,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -173,15 +183,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7007,
+						"buffer_size": 7014,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								68,
-								68
+								2501,
+								2501
 							]
 						],
 						"settings":
@@ -190,7 +200,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 174.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -200,15 +210,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 349,
+						"buffer_size": 440,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								281,
-								281
+								368,
+								368
 							]
 						],
 						"settings":
@@ -227,24 +237,29 @@
 					"file": "js/slides.js",
 					"settings":
 					{
-						"buffer_size": 5352,
+						"buffer_size": 7717,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2504,
-								2504
+								7112,
+								7112
 							]
 						],
 						"settings":
 						{
+							"rulers":
+							[
+								100
+							],
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 1414.0,
+						"translation.y": 5217.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -254,15 +269,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 4230,
+						"buffer_size": 4353,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								634,
-								634
+								3027,
+								3027
 							]
 						],
 						"settings":
@@ -271,7 +286,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2049.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

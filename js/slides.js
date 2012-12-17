@@ -1,73 +1,24 @@
-var Slide = function($el, config) {
-	this.$el = $el;
+var Slide = function($frame, config){
+	this.$frame = $frame;
 	this.config = config;
-	this.numSlides = config.slides && config.slides.length || 0;
+	this.slides = config.slides || [];
 
-	this.width = $el.width();
-	this.height = $el.height();
-
-	this.i = 0;
-	this.firstload = true;
+	this.width = $frame.width();
+	this.height = $frame.height();
 
 	this.init();
 };
 
-Slide.prototype.init = function() {
-	var config = this.config,
-		slides = config.slides;
+Slide.prototype.init = function(){
+	var self = this;
 
-	if (slides.length) {
-		this.addControls();
-		this.goTo(0);
-		if (config.autostart) { 
-			this.play();
-		}
-		this.load(1); 
-	}
-};
-
-Slide.prototype.play = function() {
-	var self = this,
-		speed = this.config.speed,
-		func = function(){
-			self.advance();
-			self.preload(self.i + 1); 
-		};
-
-	setTimeout(function(){
-		self.isPlaying = true;
-		func();
-		self.interval = setInterval(func, speed);
-	}, 400);
-};
-
-Slide.prototype.pause = function() {
-	clearInterval(this.interval);
-	this.isPlaying = false;
-};
-
-Slide.prototype.advance = function() {
-	var self = this,
-		next = (this.i + 1) % this.numSlides;
-	
-	this.i = next;
-	this.goTo(next)
-		.fail(function( msg ) {
-			console.log('failed to goTo ' + next + ': ' + msg);
-			self.advance();
-		});
-};
-
-Slide.prototype.recede = function() {
-	var self = this,
-		i = this.i,
-		next = (i === 0 ? this.numSlides : i) - 1;
-
-	this.i = next;
-	this.goTo(next)
-		.fail(function( msg ) {
-			console.log('failed to goTo ' + next + ': ' + msg);
-			self.recede();
+	this.loadNext()
+		.then(function(i){
+			self.addControls();
+			self.goTo(i);
+		})
+		.fail(function(msg){
+			console.log('unable to load first slide: ' + msg);
 		});
 };
 
@@ -87,15 +38,27 @@ Slide.prototype.addControls = function(){
 
 	a.push('</div>');
 
-	this.$el.append(a.join(''));
+	this.$frame.append(a.join(''));
 	this.bindControlEvents();
 };
 
 Slide.prototype.bindControlEvents = function(){
-	var $el = this.$el,
-		self = this;
+	var $frame = this.$frame,
+		self = this,
+		transitioning = false,
+		skip = function($icon, skipFunc){
+			if(!transitioning) {
+				transitioning = true;
+				$icon.siblings('.pause').removeClass('pause').addClass('play');
+				self.pause();
+				$.proxy(skipFunc, self)()
+					.done(function(){
+						transitioning = false;
+					});
+			}
+		};
 
-	$el.mouseenter(function(){
+	$frame.mouseenter(function(){
 		$(this).find('.controls').stop().animate({
 			bottom: "0px"
 		}, 300);
@@ -103,16 +66,10 @@ Slide.prototype.bindControlEvents = function(){
 		$(this).find('.controls').stop().animate({
 			bottom: "-55px"
 		}, 500);
-	});
-
-	$el.find('.controls').on('click', '.icon', function(e){
+	})
+	.find('.controls').on('click', '.icon', function(e){
 		e.preventDefault();
 		var $icon = $(e.target);
-
-		function pause(){
-			self.pause();
-			$icon.removeClass('pause').addClass('play');
-		}
 
 		if ($icon.hasClass('play')) {
 			self.play();
@@ -123,30 +80,114 @@ Slide.prototype.bindControlEvents = function(){
 			$icon.removeClass('pause').addClass('play');
 		}
 		else if ($icon.hasClass('prev')) {
-			$icon.siblings('.pause').removeClass('pause').addClass('play');
-			self.pause();
-			self.recede();
+			skip($icon, self.recede);
 		}
 		else if ($icon.hasClass('next')) {
-			$icon.siblings('.pause').removeClass('pause').addClass('play');
-			self.pause();
-			self.advance();
+			skip($icon, self.advance);
 		}
 	});
 };
 
-Slide.prototype.transition = function($newSlide){ // pass index instead?
-	var self = this;
+Slide.prototype.play = function(){
+	var self = this,
+		speed = this.config.speed;
 
-	if (!$newSlide.length) { 
-		console.log('no $newSlide');
-		console.log($newSlide);
-		return;
+	this.playing = true;
+
+	(function loadAndGo() {
+		if (!self.playing) { return; }
+
+		self.loadNext()
+			.then(function(i) {
+				if (!self.playing) { return; }
+
+				self.goTo(i)
+					.then(function() {
+						if (!self.playing) { return; }
+
+						self.timeout = setTimeout(loadAndGo, speed);
+					})
+					.fail(function(msg) {
+						console.log('failed to goTo ' + i + ': ' + msg);
+					});
+			})
+			.fail(function(msg) {
+				console.log('failed to play: ' + msg);
+			});	
+	})();
+};
+
+Slide.prototype.pause = function(){
+	this.playing = false;
+	if (this.timeout !== undefined) {
+		clearTimeout(this.timeout);
+	}
+};
+
+Slide.prototype.advance = function(){
+	var self = this,
+		dfd = $.Deferred();
+
+	this.loadNext()
+		.then(function(i){
+			self.goTo(i)
+				.fail(function(msg){
+					console.log('failed to goTo ' + i + ': ' + msg);
+				})
+				.done(function(){
+					dfd.resolve();
+				});
+		})
+		.fail(function(msg){
+			dfd.resolve();
+			console.log('failed to advance: ' + msg);
+		});
+
+	return dfd.promise();
+};
+
+Slide.prototype.recede = function() {
+	var self = this,
+		dfd = $.Deferred();
+
+	this.loadPrev()
+		.then(function(i){
+			self.goTo(i)
+				.fail(function(msg){
+					console.log('failed to goTo ' + i + ': ' + msg);
+				})
+				.done(function(){
+					dfd.resolve();
+				});
+		})
+		.fail(function(msg){
+			dfd.resolve();
+			console.log('failed to recede: ' + msg);
+		});
+
+	return dfd.promise();
+};
+
+Slide.prototype.goTo = function(i) {
+	var self = this,
+		slides = this.slides,
+		slide = slides[i],
+		$slide,
+		dfd = $.Deferred();
+
+	if (slide === undefined) {
+		return dfd.reject('no slide at ' + i);
 	}
 
-	var $current = self.$el.children('.slide:not(.hide)'), 
+	$slide = slide.$slide;
+
+	if ($slide === undefined || !$slide.length) {
+		return dfd.reject('no $slide at ' + i);
+	}
+
+	var $current = this.$frame.children('.slide:not(.hide)'), 
 		fadeNew = function(){ 
-			$newSlide.hide().removeClass('hide').fadeIn(400); 
+			$slide.hide().removeClass('hide').fadeIn(400, dfd.resolve); 
 		};
 
 	if ($current.length) {
@@ -158,74 +199,83 @@ Slide.prototype.transition = function($newSlide){ // pass index instead?
 	else {
 		fadeNew();
 	}
-};
-
-Slide.prototype.goTo = function(i) {
-	var self = this,
-		dfd = $.Deferred(),
-		slides = this.config.slides,
-		slide;
-
-	if (i < 0 || i >= slides.length) {
-		return dfd.reject('i is out of range (' + i + ')');
-	}
-
-	slide = slides[i];
-
-	if (slide.$el !== undefined) {
-		this.transition(slide.$el);
-	}
-	else {
-		this.load(i)
-			.then(function($newSlide){
-				self.transition($newSlide);
-				dfd.resolve();
-			})
-			.fail(function(msg){
-				dfd.reject('failed to load slide ' + i + ': ' + msg);
-			});
-	}
 
 	return dfd.promise();
 };
 
-Slide.prototype.preload = function(i) {
+Slide.prototype.loadPrev = function() {
 	var self = this,
-		nextSlide = this.config.slides[i],
-		retries = 0,
-		pl = function(){
-			self.load(i)
-				.then(function(){
-					console.log('preload successful for ' + i);
-				})
-				.fail(function(msg){
-					console.log('preload failed for '+i+' : ' + msg);
-					if (++retries < 3) {
-						console.log('retrying preload');
-						pl();
-					}
-					else {
-						console.log('failed to preload ' + i);
-					}
-				});
-		};
+		slides = this.slides,
+		numSlides = slides.length,
+		triesLeft = numSlides,
+		itr = this.itr === undefined ? 0 : this.itr,
+		getNext = function(){
+			itr = itr === 0 ? numSlides - 1 : itr - 1;
+			return itr;
+		},
+		dfd = $.Deferred();
 
-	if (nextSlide !== undefined && nextSlide.$el === undefined) {
-		pl(i);
-	}
-	else {
-		console.log('no need to preload ' + i);
-	}
+	(function loadPrev(){
+		self.load(getNext())
+			.then(function(i, $slide){
+				self.itr = i;
+				dfd.resolve(i);
+			})
+			.fail(function(){
+				if (triesLeft--) {
+					//console.log('the last one didnt load, loading next');
+					loadPrev();
+				}
+				else {
+					dfd.reject('theres nothing else to load');
+				}
+			});
+	})();
+	
+	return dfd.promise();
+};
+
+Slide.prototype.loadNext = function() {
+	var self = this,
+		slides = this.slides,
+		numSlides = slides.length,
+		triesLeft = numSlides,
+		itr = this.itr === undefined ? -1 : this.itr,
+		getNext = function(){
+			itr = itr === numSlides - 1 ? 0 : itr + 1;
+			return itr;
+		},
+		dfd = $.Deferred();
+
+	(function loadNext(){
+		self.load(getNext())
+			.then(function(i, $slide){
+				self.itr = i;
+				dfd.resolve(i);
+			})
+			.fail(function(){
+				if (triesLeft--) {
+					console.log('the last one didnt load, loading next');
+					loadNext();
+				}
+				else {
+					dfd.reject('theres nothing else to load');
+				}
+			});
+	})();
+	
+	return dfd.promise();
 };
 
 Slide.prototype.load = function(i) {
 	var self = this,
-		slides = this.config.slides,
+		slides = this.slides,
 		slide,
 		html,
 		src,
 		dfd = $.Deferred(),
-		id = "s" + (+new Date);
+		startTime = +new Date,
+		id = "s" + startTime;
 
 	if (i < 0 || i >= slides.length) {
 		return dfd.reject('slide index is bad: ' + i);
@@ -233,8 +283,8 @@ Slide.prototype.load = function(i) {
 
 	slide = slides[i];
 
-	if (slide.$el !== undefined) {
-		return dfd.resolve(slide.$el);
+	if (slide.$slide !== undefined) {
+		return dfd.resolve(i, slide.$slide);
 	}
 
 	src = slide.src;
@@ -244,7 +294,7 @@ Slide.prototype.load = function(i) {
 	}
 
 	html = '<div id="'+id+'" class="slide offpage"><img src="'+src+'"></div>';
-	this.$el.append(html);
+	this.$frame.append(html);
 
 	var tries = 0;
 	$('#'+id+' img').load(function(){
@@ -260,10 +310,14 @@ Slide.prototype.load = function(i) {
 			hr = oldWheight / h,
 			ratio;
 
-		if ((oldWidth === 0 || oldWheight === 0) && tries < 3) {
-			tries++;
-			console.log('trying again');
-			$img.trigger('load');
+		if (oldWidth === 0 || oldWheight === 0) {
+			if(tries++ < 3) {
+				console.log('no dimensions, trying again');
+				$img.trigger('load');
+			}
+			else {
+				dfd.reject('bad image, no dimensions')
+			}
 			return;
 		}
 
@@ -285,29 +339,14 @@ Slide.prototype.load = function(i) {
 		});
 		$slide.removeAttr('id').removeClass('offpage').addClass('hide');
 
-		slide.$el = $slide;
-		dfd.resolve($slide);
+		slide.$slide = $slide;
+		dfd.resolve(i, $slide);
 	}).error(function(){
 		dfd.reject('loading failed');
 	});
 
 	return dfd.promise();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -324,6 +363,9 @@ $.fn.slide = function(config) {
 		new Slide($(this), config);
 	});
 };
+
+
+
 
 $(document).ready(function(){
 	$('#home-slides').slide({
