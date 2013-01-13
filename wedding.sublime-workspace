@@ -39,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7014,
+				"buffer_size": 7007,
 				"line_ending": "Windows"
 			}
 		},
@@ -57,6 +57,14 @@
 			"settings":
 			{
 				"buffer_size": 7717,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Documents/other/dev/fin/js/fin.js",
+			"settings":
+			{
+				"buffer_size": 4923,
 				"line_ending": "Windows"
 			}
 		},
@@ -175,7 +183,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -183,15 +191,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7014,
+						"buffer_size": 7007,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2501,
-								2501
+								2494,
+								2494
 							]
 						],
 						"settings":
@@ -266,6 +274,32 @@
 				},
 				{
 					"buffer": 3,
+					"file": "/D/Documents/other/dev/fin/js/fin.js",
+					"settings":
+					{
+						"buffer_size": 4923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3498,
+								3498
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1643.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "css/main.css",
 					"settings":
 					{
@@ -292,7 +326,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "js/scrolls.js",
 					"settings":
 					{
