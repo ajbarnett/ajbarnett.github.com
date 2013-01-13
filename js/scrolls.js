@@ -10,6 +10,7 @@ Scrolls.prototype.init = function(){
 	this.bindClick();
 	this.bindPopper();
 	this.bindSpyer();
+	this.bindMapSpy();
 };
 
 Scrolls.prototype.bindClick = function(){
@@ -102,6 +103,18 @@ Scrolls.prototype.getSpyerSections = function(){
 	});
 
 	return sections;
+};
+
+Scrolls.prototype.bindMapSpy = function() { console.log('here');
+	var $mapWrap = $('#google-map'),
+		loadPoint = $mapWrap.offset().top - 100 - $(window).height();
+
+	$(window).bind('scroll.mapspy', $.throttle(500, function(){
+		if ($(this).scrollTop() > loadPoint) {
+			$mapWrap.uncomment();
+			$(window).unbind('.mapspy');
+		}
+	}));
 };
 
 Scrolls.prototype.activateNav = function(target){

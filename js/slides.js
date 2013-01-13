@@ -40,6 +40,7 @@ Slide.prototype.addControls = function(){
 
 	this.$frame.append(a.join(''));
 	this.bindControlEvents();
+	this.flashControls();
 };
 
 Slide.prototype.bindControlEvents = function(){
@@ -86,6 +87,11 @@ Slide.prototype.bindControlEvents = function(){
 			skip($icon, self.advance);
 		}
 	});
+};
+
+Slide.prototype.flashControls = function() {
+	var self = this;
+	setTimeout(function(){self.$frame.trigger('mouseenter');}, 1000);
 };
 
 Slide.prototype.play = function(){

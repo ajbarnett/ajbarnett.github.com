@@ -39,7 +39,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7007,
+				"buffer_size": 7068,
 				"line_ending": "Windows"
 			}
 		},
@@ -47,7 +47,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 440,
+				"buffer_size": 964,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function(){"
 			}
@@ -56,7 +56,7 @@
 			"file": "js/slides.js",
 			"settings":
 			{
-				"buffer_size": 7717,
+				"buffer_size": 7874,
 				"line_ending": "Windows"
 			}
 		},
@@ -80,7 +80,7 @@
 			"file": "js/scrolls.js",
 			"settings":
 			{
-				"buffer_size": 2733,
+				"buffer_size": 3090,
 				"line_ending": "Windows"
 			}
 		}
@@ -183,7 +183,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -191,15 +191,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7007,
+						"buffer_size": 7068,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2494,
-								2494
+								1857,
+								1857
 							]
 						],
 						"settings":
@@ -208,7 +208,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 174.0,
+						"translation.y": 329.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -218,15 +218,15 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 440,
+						"buffer_size": 964,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								368,
-								368
+								522,
+								522
 							]
 						],
 						"settings":
@@ -245,15 +245,15 @@
 					"file": "js/slides.js",
 					"settings":
 					{
-						"buffer_size": 7717,
+						"buffer_size": 7874,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7112,
-								7112
+								1899,
+								1899
 							]
 						],
 						"settings":
@@ -267,7 +267,7 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 5217.0,
+						"translation.y": 711.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -330,15 +330,15 @@
 					"file": "js/scrolls.js",
 					"settings":
 					{
-						"buffer_size": 2733,
+						"buffer_size": 3090,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								639,
-								639
+								2410,
+								2410
 							]
 						],
 						"settings":
@@ -347,7 +347,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 110.0,
+						"translation.y": 1044.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
