@@ -1,8 +1,3 @@
-/* vim: noet ts=4 sw=4
- * Version: 1.0
- * Date: 2010-01-28
- * Author: Romuald Brunet <romuald@chivil.com>
- */
 (function($) {
 	$.fn.uncomment = function(recurse) {
 		$(this).contents().each(function() {
@@ -33,25 +28,8 @@ var Countdown = function(){
 	}, 200);
 };
 
-var Treesize = function(){
-	var $header = $('.header'),
-		$trees = $header.find('.trees');
-
-	$trees.click(function(){
-		$header.css('height', '130px');
-		$trees.css({
-			width: "100px",
-			left: "60px"
-		});
-	});
-};
-
-
-
 
 
 $(document).ready(function(){
 	Countdown();
-	Treesize();
-
 });

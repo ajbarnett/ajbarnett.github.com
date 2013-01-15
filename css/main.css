@@ -76,13 +76,16 @@ body {
 .header {
 	position: relative;
 	background-color: #0A143C;
-	height: 220px;
+	height: 130px;
 }
 .header h1 {
 	font-size: 22px;
 	position: absolute;
 	right: 30px;
 	bottom: 36px;
+	color: white;
+}
+h1 a, h1 a:hover {
 	color: white;
 }
 .header h6 {
@@ -95,12 +98,9 @@ body {
 }
 .trees { 
 	background: transparent url(../img/trees.png) no-repeat;
-	width: 160px;
-	max-width: 100%;
-	height: auto;
 	position: absolute;
 	bottom: 1px;
-	left: 25px;
+	left: 30px;
 }
 
 .left-rail {
