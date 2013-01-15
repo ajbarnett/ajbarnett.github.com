@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"bind",
+				"bindSpyer"
+			],
+			[
 				"get",
 				"getNext"
 			],
@@ -39,7 +43,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7068,
+				"buffer_size": 7359,
 				"line_ending": "Windows"
 			}
 		},
@@ -47,7 +51,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 964,
+				"buffer_size": 850,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function(){"
 			}
@@ -72,7 +76,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 4353,
+				"buffer_size": 4392,
 				"line_ending": "Windows"
 			}
 		},
@@ -80,7 +84,7 @@
 			"file": "js/scrolls.js",
 			"settings":
 			{
-				"buffer_size": 3090,
+				"buffer_size": 3198,
 				"line_ending": "Windows"
 			}
 		}
@@ -131,9 +135,10 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -141,6 +146,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"a href=\"htt",
+			":hover",
+			" \n",
+			"console",
 			"console.log",
 			"lide2",
 			"isPlaying",
@@ -183,7 +192,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -191,15 +200,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7068,
+						"buffer_size": 7359,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1857,
-								1857
+								481,
+								481
 							]
 						],
 						"settings":
@@ -208,7 +217,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 329.0,
+						"translation.y": 82.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -218,21 +227,22 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 964,
+						"buffer_size": 850,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								522,
-								522
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"auto_name": "$(document).ready(function(){",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -267,7 +277,7 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 711.0,
+						"translation.y": 1132.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -303,15 +313,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 4353,
+						"buffer_size": 4392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3027,
-								3027
+								1672,
+								1672
 							]
 						],
 						"settings":
@@ -320,7 +330,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2049.0,
+						"translation.y": 808.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -330,15 +340,15 @@
 					"file": "js/scrolls.js",
 					"settings":
 					{
-						"buffer_size": 3090,
+						"buffer_size": 3198,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2410,
-								2410
+								2460,
+								2460
 							]
 						],
 						"settings":
@@ -347,7 +357,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1044.0,
+						"translation.y": 1442.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
