@@ -56,17 +56,21 @@ small { font-size: 0.8em;}
 .cf {
     *zoom: 1;
 }
-/* html, body { height: 100%; } */
 body { 
 	background-color: #EBDDB9;
 }
 .page { 
 	margin: 10px auto; 
 	width: 860px; 
-	/*height: 97%;*/
 	position: relative;
 	background-color:#f9f7f3;
 	box-shadow: 0 0 10px 0 #ABA288;
+}
+
+#credits {
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 11px;
 }
 
 .header {
@@ -75,13 +79,6 @@ body {
 	height: 220px;
 }
 .header h1 {
-	/*
-	background: transparent url(../img/create.png) no-repeat;
-	position: absolute;
-	right: 27px;
-	bottom: 31px;
-	width: 223px;
-	height: 51px;*/
 	font-size: 22px;
 	position: absolute;
 	right: 30px;
@@ -140,6 +137,9 @@ body {
 	height: 100%;
 	padding: 5px 0;
 	color: #0A143C;
+}
+.main-nav a:hover {
+	color: #688C82;
 }
 .main-nav .active {
 	font-weight: bold;

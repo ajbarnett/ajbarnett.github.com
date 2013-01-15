@@ -68,6 +68,7 @@ Scrolls.prototype.bindSpyer = function(){
 		$nav = this.$nav,
 		offset = this.config.offset,
 		sections = this.getSpyerSections(),
+		firstSec = sections[0],
 		secLen = sections.length,
 		top;
 
@@ -76,12 +77,17 @@ Scrolls.prototype.bindSpyer = function(){
 
 		top = $(this).scrollTop();
 
-		$.each(sections, function(i, s){
-			if (top >= s.top - offset && (i + 1 === secLen || (i + 1 < secLen && top < sections[i + 1].top - offset))) {
-				self.activateNav(s.id);
-				return false;
-			}
-		});
+		if (top <= firstSec.top - offset) {
+			self.activateNav(firstSec.id);
+		}
+		else {
+			$.each(sections, function(i, s){
+				if (top >= s.top - offset && (i + 1 === secLen || (i + 1 < secLen && top < sections[i + 1].top - offset))) {
+					self.activateNav(s.id);
+					return false;
+				}
+			});
+		}
 	}));
 };
 
@@ -105,7 +111,7 @@ Scrolls.prototype.getSpyerSections = function(){
 	return sections;
 };
 
-Scrolls.prototype.bindMapSpy = function() { console.log('here');
+Scrolls.prototype.bindMapSpy = function() { 
 	var $mapWrap = $('#google-map'),
 		loadPoint = $mapWrap.offset().top - 100 - $(window).height();
 
