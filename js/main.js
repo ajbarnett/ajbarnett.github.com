@@ -38,10 +38,10 @@ var Treesize = function(){
 		$trees = $header.find('.trees');
 
 	$trees.click(function(){
-		$header.css('height', '160px');
+		$header.css('height', '130px');
 		$trees.css({
-			width: "120px",
-			left: "45px"
+			width: "100px",
+			left: "60px"
 		});
 	});
 };
