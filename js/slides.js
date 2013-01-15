@@ -382,7 +382,7 @@ $(document).ready(function(){
 				a = new Array(count);
 			while (i < count) {
 				a[i++] = {
-					src: "img/" + (i < 10 ? "0" : "") + i + ".jpg"
+					src: "img/" + (i < 10 ? "0" : "") + i + ".png"
 				}
 			}
 			return a;
