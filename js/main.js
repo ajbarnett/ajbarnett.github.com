@@ -33,7 +33,18 @@ var Countdown = function(){
 	}, 200);
 };
 
+var Treesize = function(){
+	var $header = $('.header'),
+		$trees = $header.find('.trees');
 
+	$trees.click(function(){
+		$header.css('height', '160px');
+		$trees.css({
+			width: "120px",
+			left: "45px"
+		});
+	});
+};
 
 
 
@@ -41,4 +52,6 @@ var Countdown = function(){
 
 $(document).ready(function(){
 	Countdown();
+	Treesize();
+
 });

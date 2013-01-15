@@ -50,7 +50,7 @@ Scrolls.prototype.bindPopper = function(){
 		detatched = 'detatched',
 		state = attached;
 
-	$(window).scroll($.throttle(100, function(){
+	$(window).bind('scroll.popper', $.throttle(100, function(){
 		var top = $(this).scrollTop();
 		if (top > navTop && state === attached) {
 			$nav.addClass('popped');
@@ -72,7 +72,7 @@ Scrolls.prototype.bindSpyer = function(){
 		secLen = sections.length,
 		top;
 
-	$(window).scroll($.throttle(250, function(){
+	$(window).bind('scroll.spyer', $.throttle(250, function(){
 		if (!self.spying) { return; }
 
 		top = $(this).scrollTop();
@@ -112,15 +112,18 @@ Scrolls.prototype.getSpyerSections = function(){
 };
 
 Scrolls.prototype.bindMapSpy = function() { 
-	var $mapWrap = $('#google-map'),
-		loadPoint = $mapWrap.offset().top - 100 - $(window).height();
+	var self = this,
+		$mapWrap = $('#google-map'),
+		$window = $(window);
 
-	$(window).bind('scroll.mapspy', $.throttle(500, function(){
-		if ($(this).scrollTop() > loadPoint) {
-			$mapWrap.uncomment();
-			$(window).unbind('.mapspy');
-		}
-	}));
+	setTimeout(function(){
+		$mapWrap.uncomment();
+		$window.unbind('.mapspy');
+		setTimeout(function(){
+			$window.unbind('.spyer');
+			self.bindSpyer();
+		}, 500);
+	}, 500);
 };
 
 Scrolls.prototype.activateNav = function(target){
