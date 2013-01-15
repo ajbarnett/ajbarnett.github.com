@@ -76,7 +76,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 4392,
+				"buffer_size": 4372,
 				"line_ending": "Windows"
 			}
 		},
@@ -135,7 +135,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 90.0,
+		"height": 0.0,
 		"where_history":
 		[
 			""
@@ -192,7 +192,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -207,8 +207,8 @@
 						"selection":
 						[
 							[
-								481,
-								481
+								7065,
+								7065
 							]
 						],
 						"settings":
@@ -217,7 +217,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 82.0,
+						"translation.y": 1556.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -262,8 +262,8 @@
 						"selection":
 						[
 							[
-								1899,
-								1899
+								7653,
+								7653
 							]
 						],
 						"settings":
@@ -277,7 +277,7 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 1132.0,
+						"translation.y": 5268.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -313,15 +313,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 4392,
+						"buffer_size": 4372,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1672,
-								1672
+								4054,
+								4054
 							]
 						],
 						"settings":
@@ -330,7 +330,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 808.0,
+						"translation.y": 2984.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
