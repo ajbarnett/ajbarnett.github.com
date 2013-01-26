@@ -56,18 +56,18 @@
 				<section class="sec" id="directions">
 					<h2>Directions</h2>
 
-					<div id="google-map">
-						<!--
-							<iframe width="620" height="520" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?msa=0&amp;msid=204205937777402102461.0004cf2f689fec7b31cf3&amp;ie=UTF8&amp;t=h&amp;ll=40.386305,-105.249023&amp;spn=1.087863,1.864929&amp;z=9&amp;iwloc=0004cf2f6af47478f31d6&amp;output=embed"></iframe>
-						-->
+					<div id="map-picker">
+						<div id="map-from" class="locations">
+							<h3>From:</h3>
+						</div>
+						<div id="map-to" class="locations">
+							<h3>To:</h3>
+						</div>
 					</div>
 
-					<br><br>
-					<p>Please use the map above for directions. Here is the physical address: </p>
+					<div id="map-canvas"></div>
 
-					<p>Lionscrest Manor<br>603 Indian Lookout Road<br>Lyons, CO<br>80540</p>
-
-					<p></p>
+					<div id="directions-panel"></div>
 
 				</section>
 
@@ -88,10 +88,10 @@
 				<section class="sec" id="fridaypicnic">
 					<h2>Friday Picnic</h2>
 
-					<p>We will be meeting at Eben G. Fine Park in Boulder for a cookout on Friday, June 21st, the day before the wedding. There will be food and drinks and if you are feeling brave, you can take a dip in the creek!</p>
-
+					<p>We will be meeting at Eben G. Fine Park in Boulder for a cookout on Friday, June 21st, the day before the wedding. There will be food, drink and games and if you are feeling brave, you can take a dip in the creek!</p>
+<!--
 					<p><strong>Directions: </strong>Check out the <a href="#directions">map above</a> (click one of the other blue pins), or <a href="https://maps.google.com/maps?q=Eben+G.+Fine+Park,+Boulder,+CO&hl=en&sll=40.021479,-105.261123&sspn=0.012423,0.01929&z=15" target="_blank">get directions in a separate tab</a>.</p>
-
+-->
 					<div id="picnic-slides" class="slides"></div>
 
 				</section>
@@ -135,11 +135,17 @@
 
 		</div>
 
-		<div id="credits">Created in 2013 by <a href="http://jaredbarnett.com" target="_blank">Jared Barnett</a></div>
+		<div id="credits">
+			Created in 2013 by <a href="http://jaredbarnett.com" target="_blank">Jared Barnett</a>, 
+			<br>
+			with tons of help from Allie
+		</div>
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-_3L5LaKkSiDuuU1ZaR2gsopudIMDJf8&sensor=true"></script>
 		<script src="js/jquery.ba-throttle-debounce.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/maps.js"></script>
 		<script src="js/scrolls.js"></script>
 		<script src="js/slides.js"></script>
 	</body>

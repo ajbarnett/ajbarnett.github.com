@@ -10,7 +10,7 @@ Scrolls.prototype.init = function(){
 	this.bindClick();
 	this.bindPopper();
 	this.bindSpyer();
-	this.bindMapSpy();
+	this.bindMapListener();
 };
 
 Scrolls.prototype.bindClick = function(){
@@ -111,19 +111,18 @@ Scrolls.prototype.getSpyerSections = function(){
 	return sections;
 };
 
-Scrolls.prototype.bindMapSpy = function() { 
+Scrolls.prototype.bindMapListener = function() { 
 	var self = this,
-		$mapWrap = $('#google-map'),
+		offset = 30,
+		$map = $('#map-canvas'),
 		$window = $(window);
 
-	setTimeout(function(){
-		$mapWrap.uncomment();
-		$window.unbind('.mapspy');
-		setTimeout(function(){
-			$window.unbind('.spyer');
-			self.bindSpyer();
-		}, 500);
-	}, 500);
+	$window.on('.scrollToMap', function(){
+		$('html, body').animate({
+			scrollTop: $map.offset().top - offset
+		}, 1000);
+	})
+
 };
 
 Scrolls.prototype.activateNav = function(target){

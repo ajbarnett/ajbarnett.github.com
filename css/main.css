@@ -35,7 +35,7 @@ table {
 	border-spacing: 0;
 }
 
-a { text-decoration: none; color: #688C82; }
+a { text-decoration: none; color: #688C82; border: none; }
 a:hover { color: #8ABFA1; }
 
 small { font-size: 0.8em;}
@@ -232,6 +232,60 @@ h1 a, h1 a:hover {
 	top: 50%;
 	margin-top: -12px;
 }
+
+
+.locations {
+	width: 50%;
+	float: left;
+	height: 250px;
+}
+
+.locations h3 {
+	margin-bottom: 20px;
+}
+
+.location {
+	position: relative; 
+	padding: 10px 0 10px 40px;
+	cursor: pointer;
+}
+.location:hover {
+	background-color: #f5f3ee;
+}
+
+.location.disabled {
+	cursor: default;
+	background-color: transparent;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+.location.disabled h5 {
+	color: #789;
+}
+.location input {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+.location .address {
+	display: none;
+}
+
+
+#map-canvas {
+	width: 620px;
+	height: 420px;
+	margin-bottom: 40px;
+	clear: both;
+}
+
+
+
+
+
+
+
 
 .reading { padding-bottom: 100px; }
 .reading p { font-style: italic; }

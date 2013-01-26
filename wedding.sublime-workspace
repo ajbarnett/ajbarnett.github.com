@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"otherloc",
+				"getOtherLocationObject"
+			],
+			[
+				"deac",
+				"deactivateLocation"
+			],
+			[
+				"otherloca",
+				"otherLocationSameVal"
+			],
+			[
+				"other",
+				"otherLocationActive"
+			],
+			[
+				"goog",
+				"googAddress"
+			],
+			[
 				"bind",
 				"bindSpyer"
 			],
@@ -43,7 +63,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7359,
+				"buffer_size": 7197,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,9 +71,18 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 850,
+				"buffer_size": 851,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function(){"
+			}
+		},
+		{
+			"file": "js/maps.js",
+			"settings":
+			{
+				"buffer_size": 6892,
+				"line_ending": "Windows",
+				"name": "var Mapper = function($map, config){"
 			}
 		},
 		{
@@ -73,18 +102,18 @@
 			}
 		},
 		{
-			"file": "css/main.css",
+			"file": "js/scrolls.js",
 			"settings":
 			{
-				"buffer_size": 4372,
+				"buffer_size": 3172,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/scrolls.js",
+			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 3198,
+				"buffer_size": 4919,
 				"line_ending": "Windows"
 			}
 		}
@@ -200,15 +229,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7359,
+						"buffer_size": 7197,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7065,
-								7065
+								2247,
+								2247
 							]
 						],
 						"settings":
@@ -217,7 +246,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1556.0,
+						"translation.y": 466.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -227,31 +256,61 @@
 					"file": "js/main.js",
 					"settings":
 					{
-						"buffer_size": 850,
+						"buffer_size": 851,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								851,
+								851
 							]
 						],
 						"settings":
 						{
 							"auto_name": "$(document).ready(function(){",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 21.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
+					"file": "js/maps.js",
+					"settings":
+					{
+						"buffer_size": 6892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1669,
+								1669
+							]
+						],
+						"settings":
+						{
+							"auto_name": "var Mapper = function($map, config){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 597.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "js/slides.js",
 					"settings":
 					{
@@ -283,7 +342,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
@@ -294,8 +353,8 @@
 						"selection":
 						[
 							[
-								3498,
-								3498
+								3920,
+								3920
 							]
 						],
 						"settings":
@@ -309,46 +368,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "css/main.css",
-					"settings":
-					{
-						"buffer_size": 4372,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4054,
-								4054
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2984.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
 					"buffer": 5,
 					"file": "js/scrolls.js",
 					"settings":
 					{
-						"buffer_size": 3198,
+						"buffer_size": 3172,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2460,
-								2460
+								2550,
+								2550
 							]
 						],
 						"settings":
@@ -357,7 +389,34 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1442.0,
+						"translation.y": 1315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "css/main.css",
+					"settings":
+					{
+						"buffer_size": 4919,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4039,
+								4039
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3272.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -420,7 +479,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 150.0,
 	"status_bar_visible": true
 }
