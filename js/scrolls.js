@@ -72,6 +72,12 @@ Scrolls.prototype.bindSpyer = function(){
 		secLen = sections.length,
 		top;
 
+	setInterval(function(){
+		sections = self.getSpyerSections();
+		firstSec = sections[0];
+		secLen = sections.length;
+	}, 5000);
+
 	$(window).bind('scroll.spyer', $.throttle(250, function(){
 		if (!self.spying) { return; }
 

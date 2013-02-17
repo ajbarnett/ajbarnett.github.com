@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"backg",
+				"background-position"
+			],
+			[
+				"directions",
+				"directionsService"
+			],
+			[
+				"direction",
+				"directionsDisplay"
+			],
+			[
+				"has",
+				"hasValidLocation"
+			],
+			[
+				"disable",
+				"disableLocation"
+			],
+			[
 				"otherloc",
 				"getOtherLocationObject"
 			],
@@ -63,7 +83,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 7197,
+				"buffer_size": 11838,
 				"line_ending": "Windows"
 			}
 		},
@@ -80,7 +100,7 @@
 			"file": "js/maps.js",
 			"settings":
 			{
-				"buffer_size": 6892,
+				"buffer_size": 8195,
 				"line_ending": "Windows",
 				"name": "var Mapper = function($map, config){"
 			}
@@ -97,7 +117,7 @@
 			"file": "/D/Documents/other/dev/fin/js/fin.js",
 			"settings":
 			{
-				"buffer_size": 4923,
+				"buffer_size": 5021,
 				"line_ending": "Windows"
 			}
 		},
@@ -105,7 +125,7 @@
 			"file": "js/scrolls.js",
 			"settings":
 			{
-				"buffer_size": 3172,
+				"buffer_size": 3301,
 				"line_ending": "Windows"
 			}
 		},
@@ -113,7 +133,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 4919,
+				"buffer_size": 6333,
 				"line_ending": "Windows"
 			}
 		}
@@ -175,6 +195,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"clear",
+			"float: left",
+			"console.log",
+			"clearMap",
+			"coords",
+			".jpg",
 			"a href=\"htt",
 			":hover",
 			" \n",
@@ -201,6 +227,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			".png",
 			"//console.log",
 			"lide",
 			".$slide",
@@ -221,7 +248,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -229,15 +256,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 7197,
+						"buffer_size": 11838,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2247,
-								2247
+								2062,
+								2062
 							]
 						],
 						"settings":
@@ -246,7 +273,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 466.0,
+						"translation.y": 643.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -275,7 +302,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 21.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -285,26 +312,31 @@
 					"file": "js/maps.js",
 					"settings":
 					{
-						"buffer_size": 6892,
+						"buffer_size": 8195,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1669,
-								1669
+								5961,
+								5961
 							]
 						],
 						"settings":
 						{
 							"auto_name": "var Mapper = function($map, config){",
+							"rulers":
+							[
+								100
+							],
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 4,
-							"translate_tabs_to_spaces": false
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 597.0,
+						"translation.y": 3082.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -346,15 +378,15 @@
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
-						"buffer_size": 4923,
+						"buffer_size": 5021,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3920,
-								3920
+								3938,
+								3938
 							]
 						],
 						"settings":
@@ -372,15 +404,15 @@
 					"file": "js/scrolls.js",
 					"settings":
 					{
-						"buffer_size": 3172,
+						"buffer_size": 3301,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2550,
-								2550
+								1556,
+								1556
 							]
 						],
 						"settings":
@@ -389,7 +421,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1315.0,
+						"translation.y": 877.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -399,15 +431,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 4919,
+						"buffer_size": 6333,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4039,
-								4039
+								4678,
+								4678
 							]
 						],
 						"settings":
@@ -416,7 +448,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3272.0,
+						"translation.y": 3754.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

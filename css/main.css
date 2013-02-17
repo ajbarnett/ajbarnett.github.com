@@ -34,6 +34,7 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+td, th { vertical-align: middle; }
 
 a { text-decoration: none; color: #688C82; border: none; }
 a:hover { color: #8ABFA1; }
@@ -44,6 +45,10 @@ small { font-size: 0.8em;}
 .offpage { position: fixed; top: -10000px; }
 
 .flrimg { float: right; margin: 0 0 20px 20px; }
+.fllimg { float: left; margin: 0 20px 20px 0; }
+.fll { float: left; }
+.flr { float: right; }
+.clear { clear: both; }
 
 .cf:before,
 .cf:after {
@@ -233,11 +238,20 @@ h1 a, h1 a:hover {
 	margin-top: -12px;
 }
 
+#map-picker {
+	position: relative;
+}
+.clear-map {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 12px;
+}
 
 .locations {
 	width: 50%;
 	float: left;
-	height: 250px;
+	height: 300px;
 }
 
 .locations h3 {
@@ -246,27 +260,47 @@ h1 a, h1 a:hover {
 
 .location {
 	position: relative; 
-	padding: 10px 0 10px 40px;
+	margin-bottom: 2px;
 	cursor: pointer;
 }
-.location:hover {
-	background-color: #f5f3ee;
+.location.active {
+	cursor: auto;
 }
-
+.location:hover, .location.active {
+	background-color: #f5f3ee;
+	margin-right: 10px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	border-radius: 8px;
+	border: 1px solid #dddbe7;
+}
+.location:hover .glyph, .location.active .glyph {
+	top: 9px;
+}
 .location.disabled {
 	cursor: default;
 	background-color: transparent;
 	opacity: 0.5;
 	filter: alpha(opacity=50);
 }
+.location, .location.disabled {
+	padding: 10px 0 10px 60px;
+	border: none;
+}
 
 .location.disabled h5 {
 	color: #789;
 }
 .location input {
+	visibility: hidden;
 	position: absolute;
 	top: 10px;
 	left: 10px;
+}
+.location .glyph, .location.disabled .glyph {
+	position: absolute;
+	top: 10px;
+	left: 20px;
 }
 .location .address {
 	display: none;
@@ -283,19 +317,36 @@ h1 a, h1 a:hover {
 
 
 
-
-
-
-
 .reading { padding-bottom: 100px; }
 .reading p { font-style: italic; }
 
 h2 { font-size: 2em; margin: 0 0 1em; }
 h3 { font-size: 1.5em; }
+h4 { font-size: 1em; font-weight:bold; margin:0 0 .5em; }
 p { margin-bottom: 30px; }
 .divider { 
 	display: block;
 	margin: 0 auto 80px;
 }
-.ref-code { position: relative; top: -20px; font-weight: bold; font-size: 20px; }
-ul { padding: 10px 0 0 10px; }
+.ref-code { font-weight: bold; font-size: 20px; }
+.indent { padding-left: 20px; }
+.block { margin-bottom: 30px; }
+.tight { margin-bottom: 10px; }
+.txts { font-size: 13px; }
+.txtr { text-align: right; }
+ul { padding-left: 20px; }
+
+.glyph { 
+	display: inline-block;
+	width:20px;
+	height:20px;
+	background: transparent url(../img/Entypo-All-Glyphs.png) no-repeat 0 0;
+}
+.paper-plane { background-position: -101px 0; }
+.plane { background-position: -241px -40px; }
+.bell { background-position: -321px -20px; }
+.moon { background-position: -41px -40px; }
+.luggage { background-position: -261px -60px; }
+.home { background-position: -221px -20px; }
+.heart-full { background-position: -41px -20px; }
+.heart-empty { background-position: -61px -20px; }

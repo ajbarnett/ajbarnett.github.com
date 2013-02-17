@@ -1,6 +1,10 @@
 var Mapper = function() {
 	this.MAP_ID = '#map-canvas'
 	this.$map = $(this.MAP_ID);
+	if (google && google.maps) {
+		this.initialCenter = new google.maps.LatLng(40.05, -105.249023);
+	}
+	this.initialZoom = 9;
 
 	this.init();
 
@@ -12,7 +16,25 @@ Mapper.prototype.init = function() {
 	this.places = this.buildPlaces();
 	this.map = this.buildMap();
 	this.initLocationsPicker();
+	this.initMapClear();
 	//this.getDirections(this.places[2], this.places[1]);
+};
+
+Mapper.prototype.initMapClear = function() {
+	var $picker = $('#map-picker'),
+		$clearer = $picker.find('.clear-map'),
+		self = this;
+
+	$clearer.click(function(){
+		$picker.find('.location.active, .location.disabled')
+			.each(function(){
+				var $l = $(this);
+				self.deactivateLocation($l);
+				self.enableLocation($l);
+			});
+
+		self.clearMap();
+	});
 };
 
 Mapper.prototype.initLocationsPicker = function() {
@@ -20,10 +42,10 @@ Mapper.prototype.initLocationsPicker = function() {
 		$to = $('#map-to');
 
 	$from.append(
-		this.buildLocationPicker("from", ["dia", "boulderado", "lionscrest"])
+		this.buildLocationPicker("from", ["dia", "boulderado", "marriott", "lionscrest"])
 	);
 	$to.append(
-		this.buildLocationPicker("to", ["boulderado", "lionscrest", "dia"])
+		this.buildLocationPicker("to", ["boulderado", "marriott", "lionscrest", "dia"])
 	);
 
 	this.bindLocationClick();
@@ -117,14 +139,14 @@ Mapper.prototype.updateOtherSide = function(newVal, $otherSide) {
 
 	var $locations = $otherSide.find('.location'),
 		$disabled = $locations.filter('.disabled'),
+		$active = $locations.filter('.active'),
 		$sameVal = $locations.find('input[value=' + newVal + ']').closest('.location');
+
+	this.deactivateLocation($active);
 
 	if (!$disabled.is($sameVal)) {
 		this.disableLocation($sameVal);
 		this.enableLocation($disabled);
-		if ($sameVal.hasClass('active')) {
-			this.deactivateLocation($sameVal);
-		}
 	}
 
 };
@@ -181,6 +203,7 @@ Mapper.prototype.buildLocation = function(name, places, placeId) {
 	var html = [
 		'<div class="location">',
 			'<input type="radio" name="' + name + '" value="' + placeId + '" />',
+			'<span class="glyph ' + place.icon + '"></span>',
 			'<h5>' + place.name + '</h5>',
 			'<div class="address">' + place.address + '</div>',
 		'</div>'
@@ -197,19 +220,25 @@ Mapper.prototype.buildPlaces = function() {
 	return {
 		dia: {
 			name: "Denver International Airport",
-			coords: [39.8396499, -104.6770477],
+			icon: "paper-plane",
 			address: "8500 Pe&ntilde;a Boulevard<br>Denver, CO<br>80249-6340",
 			googAddress: "8500 Pena Boulevard, Denver, CO 80249-6340"
 		},
 		boulderado: {
 			name: "Hotel Boulderado",
-			coords: [40.0194339, -105.2792882],
+			icon: "luggage",
 			address: "2115 13th St<br>Boulder, CO<br>80302",
 			googAddress: "2115 13th St, Boulder, CO 80302"
 		},
+		marriott: {
+			name: "Courtyard by Marriott",
+			icon: "luggage",
+			address: "4710 Pearl East Circle<br>Boulder, CO<br>80301",
+			googAddress: "4710 Pearl East Circle, Boulder, CO 80301"
+		},
 		lionscrest: {
 			name: "Lionscrest Manor",
-			coords: [40.224434, -105.280459],
+			icon: "heart-full",
 			address: "603 Indian Lookout Road<br>Lyons, CO<br>80540",
 			googAddress: "603 Indian Lookout Road, Lyons, CO 80540"
 		}
@@ -225,10 +254,18 @@ Mapper.prototype.buildMap = function() {
 	}
 
 	return new gmaps.Map($map.get(0), {
-		center: new gmaps.LatLng(40.05, -105.249023),
-		zoom: 9,
+		center: this.initialCenter,
+		zoom: this.initialZoom,
 		mapTypeId: gmaps.MapTypeId.ROADMAP
 	});
+};
+
+Mapper.prototype.clearMap = function() {
+	try {
+		$('#directions-panel').empty();
+		this.directionsDisplay.setMap(null);
+	}
+	catch(e){}
 };
 
 Mapper.prototype.getDirections = function(locations) {
@@ -252,7 +289,6 @@ Mapper.prototype.getDirections = function(locations) {
 	}
 	else {
 		directionsService.route(request, function(response, status) {
-			console.log(response);
 			if (status == google.maps.DirectionsStatus.OK) {
 				directionsDisplay.setDirections(response);
 				dfd.resolve();
@@ -264,15 +300,6 @@ Mapper.prototype.getDirections = function(locations) {
 	}
 
 	return dfd.promise();
-};
-
-Mapper.prototype.clearMap = function() {
-	var map = this.map,
-		directionsDisplay = this.directionsDisplay;
-
-	if (directionsDisplay !== undefined) {
-		directionsDisplay.setMap(null);
-	}
 };
 
 Mapper.prototype.getDirDisplay = function() {
@@ -305,38 +332,3 @@ $(document).ready(function(){
 	m = new Mapper();
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-var InitMap = function(){
-	var mapOptions = {
-		center: new google.maps.LatLng(40.05, -105.249023),
-		zoom: 9,
-		mapTypeId: google.maps.MapTypeId.ROADMAP
-	};
-	var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-	var place;
-	for (var i = 0, l = places.length; i < l; i++) {
-		place = places[i];
-		place.marker = new google.maps.Marker({
-			position: new google.maps.LatLng(place.coords[0], place.coords[1]),
-			map: map,
-			title: place.name
-		});
-	}
-};
-*/
