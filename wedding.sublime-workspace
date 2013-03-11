@@ -83,7 +83,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 11838,
+				"buffer_size": 12171,
 				"line_ending": "Windows"
 			}
 		},
@@ -100,7 +100,7 @@
 			"file": "js/maps.js",
 			"settings":
 			{
-				"buffer_size": 8195,
+				"buffer_size": 8398,
 				"line_ending": "Windows",
 				"name": "var Mapper = function($map, config){"
 			}
@@ -133,7 +133,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 6333,
+				"buffer_size": 6601,
 				"line_ending": "Windows"
 			}
 		}
@@ -248,7 +248,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -256,15 +256,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 11838,
+						"buffer_size": 12171,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2062,
-								2062
+								8400,
+								8400
 							]
 						],
 						"settings":
@@ -273,7 +273,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 643.0,
+						"translation.y": 1717.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -312,15 +312,15 @@
 					"file": "js/maps.js",
 					"settings":
 					{
-						"buffer_size": 8195,
+						"buffer_size": 8398,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5961,
-								5961
+								1152,
+								1152
 							]
 						],
 						"settings":
@@ -336,7 +336,7 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 3082.0,
+						"translation.y": 220.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -431,15 +431,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 6333,
+						"buffer_size": 6601,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4678,
-								4678
+								6532,
+								6532
 							]
 						],
 						"settings":
@@ -448,7 +448,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3754.0,
+						"translation.y": 4643.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -251,7 +251,7 @@ h1 a, h1 a:hover {
 .locations {
 	width: 50%;
 	float: left;
-	height: 300px;
+	height: 340px;
 }
 
 .locations h3 {
@@ -335,7 +335,11 @@ p { margin-bottom: 30px; }
 .txts { font-size: 13px; }
 .txtr { text-align: right; }
 ul { padding-left: 20px; }
-
+.circle-list {
+	list-style: circle;
+	padding-left: 40px;
+}
+.circle-list li { margin-bottom:5px; }
 .glyph { 
 	display: inline-block;
 	width:20px;
@@ -350,3 +354,10 @@ ul { padding-left: 20px; }
 .home { background-position: -221px -20px; }
 .heart-full { background-position: -41px -20px; }
 .heart-empty { background-position: -61px -20px; }
+.sun-big { background-position: -20px -81px; width: 21px; }
+.leaf { background-position:-81px -40px; }
+.mb5 { margin-bottom: 5px; }
+.circle-list {
+	list-style: circle;
+
+}

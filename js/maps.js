@@ -41,11 +41,13 @@ Mapper.prototype.initLocationsPicker = function() {
 	var $from = $('#map-from'),
 		$to = $('#map-to');
 
+
+
 	$from.append(
-		this.buildLocationPicker("from", ["dia", "boulderado", "marriott", "lionscrest"])
+		this.buildLocationPicker("from", ["dia", "boulderado", "marriott", "ebengfine", "lionscrest"])
 	);
 	$to.append(
-		this.buildLocationPicker("to", ["boulderado", "marriott", "lionscrest", "dia"])
+		this.buildLocationPicker("to", ["boulderado", "marriott", "ebengfine", "lionscrest", "dia"])
 	);
 
 	this.bindLocationClick();
@@ -235,6 +237,12 @@ Mapper.prototype.buildPlaces = function() {
 			icon: "luggage",
 			address: "4710 Pearl East Circle<br>Boulder, CO<br>80301",
 			googAddress: "4710 Pearl East Circle, Boulder, CO 80301"
+		},
+		ebengfine: {
+			name: "Eben G. Fine Park",
+			icon: "leaf",
+			address: "3rd & Arapahoe Ave.<br>Boulder, CO<br>80302",
+			googAddress: "Eben G. Fine Park, Boulder, CO"
 		},
 		lionscrest: {
 			name: "Lionscrest Manor",
