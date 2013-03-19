@@ -373,6 +373,7 @@ ul { padding-left: 20px; }
 		min-width:280px;
 		margin-top:0;
 		box-shadow:none;
+		overflow:hidden;
 	}
 	.header { height:90px; }
 	.trees { left: 10px; width: 85px; }
