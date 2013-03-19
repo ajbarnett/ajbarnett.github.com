@@ -251,7 +251,7 @@ h1 a, h1 a:hover {
 .locations {
 	width: 50%;
 	float: left;
-	height: 340px;
+	margin-bottom:20px;
 }
 
 .locations h3 {
@@ -432,5 +432,5 @@ ul { padding-left: 20px; }
 		padding:4%;
 		height:320px;/* let js set this */
 	}
-
+	#map-canvas { width: 100%; }
 }
