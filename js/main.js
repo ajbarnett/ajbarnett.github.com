@@ -23,6 +23,7 @@ var Countdown = function(){
 		daysleft = Math.floor((new Date(2013, 5, 22) - new Date) / (1000*60*60*24));
 
 	setTimeout(function(){
+		if ($(window).width() < 480) { return; }
 		$cd.text(daysleft);
 		$container.hide().removeClass('hide').fadeIn(1000);
 	}, 200);

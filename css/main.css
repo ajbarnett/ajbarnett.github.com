@@ -357,7 +357,79 @@ ul { padding-left: 20px; }
 .sun-big { background-position: -20px -81px; width: 21px; }
 .leaf { background-position:-81px -40px; }
 .mb5 { margin-bottom: 5px; }
-.circle-list {
-	list-style: circle;
+.circle-list { list-style: circle; }
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+	.page {
+		width:100%;
+		min-width:280px;
+		margin-top:0;
+		box-shadow:none;
+	}
+	.header { height:90px; }
+	.trees { left: 10px; width: 85px; }
+	.header h1 { right: 10px; bottom:25px; }
+	.header h6 { right: 10px; bottom:10px; }
+
+	.rail { 
+		float: none;
+		min-height: auto;
+		margin-top:10px;
+		width:96%;
+		padding:0 2%;
+	}
+	.left-rail {
+		margin-right: 0;
+	}
+	.main-nav {
+		margin:0;
+		width:auto;
+	}
+	.main-nav ul {overflow:hidden;padding-left:0;}
+	.main-nav li {
+		text-align: center;
+		float: left;
+		padding:0 10px;
+		border-right: 1px solid #d1d7de;
+		margin-top:3px;
+	}
+	.main-nav a {
+		width:auto;
+		height:auto;
+		padding:0;
+	}
+	.main-nav.popped { /* disable scrolls js */
+		position: static;
+	}
+	.main-nav .countdown { display:none;}
+
+	.sec {
+		padding-top:20px;
+	}
+	h2 {
+		margin-bottom:.5em;
+	}
+	p {
+		margin-bottom:20px;
+	}
+
+	#theday img {width:100%;}
+	#outoftowners img {width:40%;}
+	.reading {padding-bottom:50px;}
+	.reading img {width:48%;}
+
+	#home-slides, #picnic-slides {
+		width:92%;
+		padding:4%;
+		height:320px;/* let js set this */
+	}
 
 }

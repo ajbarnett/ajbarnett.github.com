@@ -20,6 +20,12 @@ Slide.prototype.init = function(){
 		.fail(function(msg){
 			console.log('unable to load first slide: ' + msg);
 		});
+
+	$(window).bind('resize', $.throttle(250, function(){
+		var $f = self.$frame;
+		self.width = $f.width();
+		self.height = $f.height();
+	}));
 };
 
 Slide.prototype.addControls = function(){
