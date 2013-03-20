@@ -382,7 +382,7 @@ ul { padding-left: 20px; }
 
 	.rail { 
 		float: none;
-		min-height: auto;
+		min-height: 45px !important;
 		margin-top:10px;
 		width:96%;
 		padding:0 2%;
