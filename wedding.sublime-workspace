@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"home",
+				"home-slides"
+			],
+			[
 				"backg",
 				"background-position"
 			],
@@ -83,7 +87,15 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 12171,
+				"buffer_size": 12562,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
+			"settings":
+			{
+				"buffer_size": 2291,
 				"line_ending": "Windows"
 			}
 		},
@@ -91,7 +103,7 @@
 			"file": "js/main.js",
 			"settings":
 			{
-				"buffer_size": 851,
+				"buffer_size": 894,
 				"line_ending": "Windows",
 				"name": "$(document).ready(function(){"
 			}
@@ -100,7 +112,7 @@
 			"file": "js/maps.js",
 			"settings":
 			{
-				"buffer_size": 8398,
+				"buffer_size": 8420,
 				"line_ending": "Windows",
 				"name": "var Mapper = function($map, config){"
 			}
@@ -109,7 +121,7 @@
 			"file": "js/slides.js",
 			"settings":
 			{
-				"buffer_size": 7874,
+				"buffer_size": 8015,
 				"line_ending": "Windows"
 			}
 		},
@@ -133,7 +145,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 6601,
+				"buffer_size": 7828,
 				"line_ending": "Windows"
 			}
 		}
@@ -162,8 +174,8 @@
 	},
 	"file_history":
 	[
-		"/D/Documents/GitHub/ajbarnett.github.com/js/slides2.js",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
+		"/D/Documents/GitHub/ajbarnett.github.com/js/slides2.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/html5shiv.js",
 		"/D/Documents/other/dev/fin/js/fin.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/scrolls.js",
@@ -248,7 +260,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -256,15 +268,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 12171,
+						"buffer_size": 12562,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8400,
-								8400
+								4900,
+								4900
 							]
 						],
 						"settings":
@@ -273,25 +285,52 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1717.0,
+						"translation.y": 1584.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "js/main.js",
+					"file": "/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
 					"settings":
 					{
-						"buffer_size": 851,
+						"buffer_size": 2291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								851,
-								851
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1451.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/main.js",
+					"settings":
+					{
+						"buffer_size": 894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								752,
+								752
 							]
 						],
 						"settings":
@@ -308,19 +347,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/maps.js",
 					"settings":
 					{
-						"buffer_size": 8398,
+						"buffer_size": 8420,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1152,
-								1152
+								6621,
+								6621
 							]
 						],
 						"settings":
@@ -336,25 +375,25 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 220.0,
+						"translation.y": 3753.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "js/slides.js",
 					"settings":
 					{
-						"buffer_size": 7874,
+						"buffer_size": 8015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7653,
-								7653
+								556,
+								556
 							]
 						],
 						"settings":
@@ -368,13 +407,13 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 5268.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
@@ -400,7 +439,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "js/scrolls.js",
 					"settings":
 					{
@@ -427,19 +466,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 6601,
+						"buffer_size": 7828,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6532,
-								6532
+								6646,
+								6646
 							]
 						],
 						"settings":
@@ -448,7 +487,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4643.0,
+						"translation.y": 5452.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

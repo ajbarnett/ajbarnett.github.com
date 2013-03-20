@@ -264,7 +264,8 @@ Mapper.prototype.buildMap = function() {
 	return new gmaps.Map($map.get(0), {
 		center: this.initialCenter,
 		zoom: this.initialZoom,
-		mapTypeId: gmaps.MapTypeId.ROADMAP
+		mapTypeId: gmaps.MapTypeId.ROADMAP,
+		scrollwheel: false
 	});
 };
 
