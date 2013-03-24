@@ -124,7 +124,7 @@
 			"file": "js/all.min.js",
 			"settings":
 			{
-				"buffer_size": 16298,
+				"buffer_size": 108800,
 				"line_ending": "Windows",
 				"name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy"
 			}
@@ -293,7 +293,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -308,8 +308,8 @@
 						"selection":
 						[
 							[
-								134,
-								134
+								509,
+								509
 							]
 						],
 						"settings":
@@ -394,15 +394,15 @@
 					"file": "js/all.min.js",
 					"settings":
 					{
-						"buffer_size": 16298,
+						"buffer_size": 108800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16298,
-								16298
+								108800,
+								108800
 							]
 						],
 						"settings":
@@ -410,7 +410,7 @@
 							"auto_name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 113478.0,
+						"translation.x": 760106.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
