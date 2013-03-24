@@ -57,7 +57,7 @@ jaNav.prototype.init = function() {
 jaNav.prototype.handleResize = function($window) {
 	var ww = $window.width(),
 		wasSmall = this.isSmall,
-		isSmall = (this.isSmall = ww < 620),
+		isSmall = (this.isSmall = ww < 820),
 		hasChanged = wasSmall === undefined || wasSmall !== isSmall;
 
 	if (isSmall) {

@@ -30,22 +30,18 @@ Slide.prototype.init = function(){
 };
 
 Slide.prototype.addControls = function(){
-	var a = [];
+	var playOrPause = this.config.autostart ? "pause": "play";
 
-	a.push('<div class="controls">');
-
-	if (this.config.autostart) {
-		a.push('<div class="icon pause"></div>');
-	}
-	else {
-		a.push('<div class="icon play"></div>');
-	}
-	a.push('<div class="icon prev"></div>');
-	a.push('<div class="icon next"></div>');
-
-	a.push('</div>');
-
-	this.$frame.append(a.join(''));
+	this.$frame.append([
+		'<div class="controls">',
+			'<div class="icon ' + playOrPause + '"></div>',
+			'<div class="icon prev"></div>',
+			'<div class="icon next"></div>',
+		'</div>',
+		'<div class="controls fs-controls">',
+			'<div class="icon fullon"></div>',
+		'</div>'
+	].join(''));
 	this.bindControlEvents();
 	this.flashControls();
 };
@@ -64,18 +60,20 @@ Slide.prototype.bindControlEvents = function(){
 						transitioning = false;
 					});
 			}
-		};
+		},
+		$controls = $frame.find('.controls');
 
 	$frame.mouseenter(function(){
-		$(this).find('.controls').stop().animate({
+		$controls.stop().animate({
 			bottom: "0px"
 		}, 300);
 	}).mouseleave(function(){
-		$(this).find('.controls').stop().animate({
+		$controls.stop().animate({
 			bottom: "-55px"
 		}, 500);
-	})
-	.find('.controls').on('click', '.icon', function(e){
+	});
+
+	$controls.on('click', '.icon', function(e){
 		e.preventDefault();
 		var $icon = $(e.target);
 
@@ -92,6 +90,14 @@ Slide.prototype.bindControlEvents = function(){
 		}
 		else if ($icon.hasClass('next')) {
 			skip($icon, self.advance);
+		}
+		else if ($icon.hasClass('fullon')) {
+			self.fullscreenOn();
+			$icon.removeClass('fullon').addClass('fulloff');
+		}
+		else if ($icon.hasClass('fulloff')) {
+			self.fullscreenOff();
+			$icon.removeClass('fulloff').addClass('fullon');
 		}
 	});
 };
@@ -179,6 +185,23 @@ Slide.prototype.recede = function() {
 		});
 
 	return dfd.promise();
+};
+
+Slide.prototype.fullscreenOn = function() {
+	var $frame = this.$frame,
+		h = $frame.outerHeight(true),
+		id = "fp-" + new Date().getTime();
+	$('<div id="'+id+'" style="height:'+h+'px;"></div>').insertBefore($frame);
+	$frame.appendTo('body').addClass('fullscreen').data('placeholder', id);
+	
+	$(window).trigger('resize');
+};
+
+Slide.prototype.fullscreenOff = function() {
+	var $frame = this.$frame,
+		id = $frame.data('placeholder');
+	$('#' + id).replaceWith($frame.removeClass('fullscreen'));
+	$(window).trigger('resize');
 };
 
 Slide.prototype.goTo = function(i) {

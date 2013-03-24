@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"fullscre",
+				"fullscreenOn"
+			],
+			[
+				"ful",
+				"fullscreenOff"
+			],
+			[
 				"res",
 				"resizeCurrentImage"
 			],
@@ -105,20 +113,10 @@
 			}
 		},
 		{
-			"contents": "Searching 16 files for \"m.\"\n\nD:\\Documents\\GitHub\\ajbarnett.github.com\\index.html:\n  205  					<section class=\"sec reading\">\n  206  						<!--\n  207: 							<img class=\"divider\" width=\"200\" src=\"img/curlicue_sm.gif\">\n  208  \n  209  							<p>Finally, a young woman approached who was not dressed in black. She had a vessel on her shoulder, and her head was covered by a veil, but her face was uncovered.  The boy approached her to ask about the alchemist.  </p>\n  210  							<img class=\"flrimg\" width=\"300\" src=\"img/37.png\">\n  211: 							<p>At that moment, it seemed to him that time stood still, and the Soul of the World surged within him.  When he looked into her dark eyes, and saw that her lips were poised between a laugh and silence, he learned the most important part of the language that everyone on earth was capable of understanding in their heart.  It was love. Something older than humanity, more ancient than the desert.  Something that exerted the same force whenever two pairs of eyes met, as had theirs here at the well.  She smiled, and that was certainly an omen- the omen he had been awaiting, without even knowing he was, for all his life.  The omen he had sought to find with his sheep and in his books, in the crystals and in the silence of the desert.</p> \n  212  							<p>It was the pure Language of the World.  It required no explanation, just as the universe needs none as it travels through endless time.  What the boy felt at that moment was that he was in the presence of the only woman in his life, and that, with no need for words, she recognized the same thing.  He was more certain of it than of anything in the world. He had been told by his parents and grandparents that he must fall in love and really know a person before becoming committed.  But maybe people who felt that way had never learned the universal language. Because, when you know that language, it's easy to understand that someone in the world awaits you, whether it's in the middle of the desert or in some great city.  And when two such people encounter each other, and their eyes meet, the past and the future become unimportant.  There is only that moment, and the incredible certainty that everything under the sun has been written by one hand only. It is the hand that evokes love, and creates a twin soul for every person in the world.  Without such love, one's dreams would have no meaning. </p>\n  213  \n\nD:\\Documents\\GitHub\\ajbarnett.github.com\\css\\main.css:\n  426  		background: -ms-linear-gradient(top, #eaecf1 0%,#d1d3de 100%);\n  427  		background: linear-gradient(to bottom, #eaecf1 0%,#d1d3de 100%);\n  428: 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaecf1', endColorstr='#d1d3de',GradientType=0 );\n  429  	}\n  430  	.main-nav li:hover a { color:#688C82; }\n\nD:\\Documents\\GitHub\\ajbarnett.github.com\\js\\maps.js:\n   44  \n   45  \n   46: 	$from.append(\n   47  		this.buildLocationPicker(\"from\", [\"dia\", \"boulderado\", \"marriott\", \"ebengfine\", \"lionscrest\"])\n   48  	);\n   ..\n  285  		directionsService = this.getDirService(),\n  286  		request = {\n  287: 			origin: from.googAddress,\n  288  			destination: to.googAddress,\n  289  			travelMode: google.maps.TravelMode.DRIVING\n\nD:\\Documents\\GitHub\\ajbarnett.github.com\\js\\respond.min.js:\n    4  \n    5  /*! Respond.js v1.1.0: min/max-width media query polyfill. (c) Scott Jehl. MIT/GPLv2 Lic. j.mp/respondjs  */\n    6: (function(e){e.respond={};respond.update=function(){};respond.mediaQueriesSupported=e.matchMedia&&e.matchMedia(\"only all\").matches;if(respond.mediaQueriesSupported){return}var w=e.document,s=w.documentElement,i=[],k=[],q=[],o={},h=30,f=w.getElementsByTagName(\"head\")[0]||s,g=w.getElementsByTagName(\"base\")[0],b=f.getElementsByTagName(\"link\"),d=[],a=function(){var D=b,y=D.length,B=0,A,z,C,x;for(;B<y;B++){A=D[B],z=A.href,C=A.media,x=A.rel&&A.rel.toLowerCase()===\"stylesheet\";if(!!z&&x&&!o[z]){if(A.styleSheet&&A.styleSheet.rawCssText){m(A.styleSheet.rawCssText,z,C);o[z]=true}else{if((!/^([a-zA-Z:]*\\/\\/)/.test(z)&&!g)||z.replace(RegExp.$1,\"\").split(\"/\")[0]===e.location.host){d.push({href:z,media:C})}}}}u()},u=function(){if(d.length){var x=d.shift();n(x.href,function(y){m(y,x.href,x.media);o[x.href]=true;u()})}},m=function(I,x,z){var G=I.match(/@media[^\\{]+\\{([^\\{\\}]*\\{[^\\}\\{]*\\})+/gi),J=G&&G.length||0,x=x.substring(0,x.lastIndexOf(\"/\")),y=function(K){return K.replace(/(url\\()['\"]?([^\\/\\)'\"][^:\\)'\"]+)['\"]?(\\))/g,\"$1\"+x+\"$2$3\")},A=!J&&z,D=0,C,E,F,B,H;if(x.length){x+=\"/\"}if(A){J=1}for(;D<J;D++){C=0;if(A){E=z;k.push(y(I))}else{E=G[D].match(/@media *([^\\{]+)\\{([\\S\\s]+?)$/)&&RegExp.$1;k.push(RegExp.$2&&y(RegExp.$2))}B=E.split(\",\");H=B.length;for(;C<H;C++){F=B[C];i.push({media:F.split(\"(\")[0].match(/(only\\s+)?([a-zA-Z]+)\\s?/)&&RegExp.$2||\"all\",rules:k.length-1,hasquery:F.indexOf(\"(\")>-1,minw:F.match(/\\(min\\-width:[\\s]*([\\s]*[0-9\\.]+)(px|em)[\\s]*\\)/)&&parseFloat(RegExp.$1)+(RegExp.$2||\"\"),maxw:F.match(/\\(max\\-width:[\\s]*([\\s]*[0-9\\.]+)(px|em)[\\s]*\\)/)&&parseFloat(RegExp.$1)+(RegExp.$2||\"\")})}}j()},l,r,v=function(){var z,A=w.createElement(\"div\"),x=w.body,y=false;A.style.cssText=\"position:absolute;font-size:1em;width:1em\";if(!x){x=y=w.createElement(\"body\");x.style.background=\"none\"}x.appendChild(A);s.insertBefore(x,s.firstChild);z=A.offsetWidth;if(y){s.removeChild(x)}else{x.removeChild(A)}z=p=parseFloat(z);return z},p,j=function(I){var x=\"clientWidth\",B=s[x],H=w.compatMode===\"CSS1Compat\"&&B||w.body[x]||B,D={},G=b[b.length-1],z=(new Date()).getTime();if(I&&l&&z-l<h){clearTimeout(r);r=setTimeout(j,h);return}else{l=z}for(var E in i){var K=i[E],C=K.minw,J=K.maxw,A=C===null,L=J===null,y=\"em\";if(!!C){C=parseFloat(C)*(C.indexOf(y)>-1?(p||v()):1)}if(!!J){J=parseFloat(J)*(J.indexOf(y)>-1?(p||v()):1)}if(!K.hasquery||(!A||!L)&&(A||H>=C)&&(L||H<=J)){if(!D[K.media]){D[K.media]=[]}D[K.media].push(k[K.rules])}}for(var E in q){if(q[E]&&q[E].parentNode===f){f.removeChild(q[E])}}for(var E in D){var M=w.createElement(\"style\"),F=D[E].join(\"\\n\");M.type=\"text/css\";M.media=E;f.insertBefore(M,G.nextSibling);if(M.styleSheet){M.styleSheet.cssText=F}else{M.appendChild(w.createTextNode(F))}q.push(M)}},n=function(x,z){var y=c();if(!y){return}y.open(\"GET\",x,true);y.onreadystatechange=function(){if(y.readyState!=4||y.status!=200&&y.status!=304){return}z(y.responseText)};if(y.readyState==4){return}y.send(null)},c=(function(){var x=false;try{x=new XMLHttpRequest()}catch(y){x=new ActiveXObject(\"Microsoft.XMLHTTP\")}return function(){return x}})();a();respond.update=a;function t(){j(true)}if(e.addEventListener){e.addEventListener(\"resize\",t,false)}else{if(e.attachEvent){e.attachEvent(\"onresize\",t)}}})(this);\n\n10 matches across 4 files\n\n\nSearching 18 files for \"javascript:;\"\n\nD:\\Documents\\GitHub\\ajbarnett.github.com\\index.html:\n  112  \n  113  							<div id=\"map-picker\" class=\"cf\">\n  114: 								<a href=\"javascript:;\" class=\"clear-map\">Clear map</a>\n  115  								<div id=\"map-from\" class=\"locations\">\n  116  									<h3>From:</h3>\n\n1 match in 1 file\n",
-			"settings":
-			{
-				"buffer_size": 6971,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
 			"file": "js/slides.js",
 			"settings":
 			{
-				"buffer_size": 7734,
+				"buffer_size": 8531,
 				"line_ending": "Windows"
 			}
 		},
@@ -126,7 +124,7 @@
 			"file": "js/all.min.js",
 			"settings":
 			{
-				"buffer_size": 108203,
+				"buffer_size": 16298,
 				"line_ending": "Windows",
 				"name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy"
 			}
@@ -143,7 +141,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 9388,
+				"buffer_size": 9563,
 				"line_ending": "Windows"
 			}
 		},
@@ -151,7 +149,7 @@
 			"file": "css/main.min.css",
 			"settings":
 			{
-				"buffer_size": 7675,
+				"buffer_size": 7802,
 				"line_ending": "Windows",
 				"name": "html,body,div,span,applet,object,iframe,h1,h2,h3,h"
 			}
@@ -169,6 +167,14 @@
 			"settings":
 			{
 				"buffer_size": 2378,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/jquery.ba-throttle-debounce.min.js",
+			"settings":
+			{
+				"buffer_size": 731,
 				"line_ending": "Windows"
 			}
 		}
@@ -287,7 +293,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -302,8 +308,8 @@
 						"selection":
 						[
 							[
-								1920,
-								1920
+								134,
+								134
 							]
 						],
 						"settings":
@@ -353,93 +359,10 @@
 				},
 				{
 					"buffer": 2,
-					"settings":
-					{
-						"buffer_size": 6971,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										208,
-										210
-									],
-									[
-										640,
-										642
-									],
-									[
-										2657,
-										2659
-									],
-									[
-										2884,
-										2886
-									],
-									[
-										3108,
-										3110
-									],
-									[
-										5961,
-										5963
-									],
-									[
-										5979,
-										5981
-									],
-									[
-										6024,
-										6026
-									],
-									[
-										6038,
-										6040
-									],
-									[
-										6066,
-										6068
-									],
-									[
-										6822,
-										6834
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								6830,
-								6830
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"output_tag": 2,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1125.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "js/slides.js",
 					"settings":
 					{
-						"buffer_size": 7734,
+						"buffer_size": 8531,
 						"regions":
 						{
 						},
@@ -447,7 +370,7 @@
 						[
 							[
 								0,
-								7734
+								8531
 							]
 						],
 						"settings":
@@ -461,25 +384,25 @@
 							"wrap_width": 100
 						},
 						"translation.x": 0.0,
-						"translation.y": 4735.0,
+						"translation.y": 2547.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "js/all.min.js",
 					"settings":
 					{
-						"buffer_size": 108203,
+						"buffer_size": 16298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7675,
-								7675
+								16298,
+								16298
 							]
 						],
 						"settings":
@@ -487,14 +410,14 @@
 							"auto_name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 52655.0,
+						"translation.x": 113478.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 4,
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
@@ -520,11 +443,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 9388,
+						"buffer_size": 9563,
 						"regions":
 						{
 						},
@@ -532,7 +455,7 @@
 						[
 							[
 								0,
-								9388
+								9563
 							]
 						],
 						"settings":
@@ -541,25 +464,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5996.0,
+						"translation.y": 2548.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "css/main.min.css",
 					"settings":
 					{
-						"buffer_size": 7675,
+						"buffer_size": 7802,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7675,
-								7675
+								7802,
+								7802
 							]
 						],
 						"settings":
@@ -567,14 +490,14 @@
 							"auto_name": "html,body,div,span,applet,object,iframe,h1,h2,h3,h",
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
-						"translation.x": 52655.0,
+						"translation.x": 54006.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "js/nav.js",
 					"settings":
 					{
@@ -585,8 +508,8 @@
 						"selection":
 						[
 							[
-								1089,
-								1089
+								0,
+								4120
 							]
 						],
 						"settings":
@@ -596,13 +519,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 504.0,
+						"translation.y": 577.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "js/sections.js",
 					"settings":
 					{
@@ -613,8 +536,8 @@
 						"selection":
 						[
 							[
-								1690,
-								1690
+								0,
+								2378
 							]
 						],
 						"settings":
@@ -624,6 +547,32 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 926.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/jquery.ba-throttle-debounce.min.js",
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								731,
+								731
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 2745.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
