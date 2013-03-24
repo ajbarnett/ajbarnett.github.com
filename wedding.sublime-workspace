@@ -126,7 +126,7 @@
 			"file": "js/all.min.js",
 			"settings":
 			{
-				"buffer_size": 7675,
+				"buffer_size": 108203,
 				"line_ending": "Windows",
 				"name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy"
 			}
@@ -143,7 +143,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 9388,
+				"buffer_size": 9113,
 				"line_ending": "Windows"
 			}
 		},
@@ -221,7 +221,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
 			""
@@ -287,7 +287,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -471,15 +471,15 @@
 					"file": "js/all.min.js",
 					"settings":
 					{
-						"buffer_size": 7675,
+						"buffer_size": 108203,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7675,
-								7675
+								108203,
+								108203
 							]
 						],
 						"settings":
@@ -487,7 +487,7 @@
 							"auto_name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 52980.0,
+						"translation.x": 756371.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -524,7 +524,7 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 9388,
+						"buffer_size": 9113,
 						"regions":
 						{
 						},
@@ -532,7 +532,7 @@
 						[
 							[
 								0,
-								9388
+								9113
 							]
 						],
 						"settings":
@@ -541,7 +541,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5996.0,
+						"translation.y": 5738.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -592,8 +592,7 @@
 						"settings":
 						{
 							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 504.0,
@@ -619,8 +618,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 926.0,
