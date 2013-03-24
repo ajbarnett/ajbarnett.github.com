@@ -145,7 +145,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 7828,
+				"buffer_size": 7839,
 				"line_ending": "Windows"
 			}
 		}
@@ -470,15 +470,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 7828,
+						"buffer_size": 7839,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6646,
-								6646
+								6954,
+								6954
 							]
 						],
 						"settings":

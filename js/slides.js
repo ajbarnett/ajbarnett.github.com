@@ -21,10 +21,11 @@ Slide.prototype.init = function(){
 			console.log('unable to load first slide: ' + msg);
 		});
 
-	$(window).bind('resize', $.throttle(250, function(){
+	$(window).bind('resize', $.throttle(400, function(){
 		var $f = self.$frame;
 		self.width = $f.width();
 		self.height = $f.height();
+		self.resizeCurrentImage();
 	}));
 };
 
@@ -279,6 +280,14 @@ Slide.prototype.loadNext = function() {
 	return dfd.promise();
 };
 
+Slide.prototype.resizeCurrentImage = function() { 
+	try { 
+		var $currentImg = this.slides[this.itr].$slide.find('img');
+		this.sizeImg($currentImg);
+	}
+	catch(e){}
+};
+
 Slide.prototype.load = function(i) {
 	var self = this,
 		slides = this.slides,
@@ -311,18 +320,8 @@ Slide.prototype.load = function(i) {
 	var tries = 0;
 	$('#'+id+' img').load(function(){
 		var $img = $(this),
-			$slide = $img.closest('.slide'),
-			w = self.width,
-			h = self.height,
-			oldWidth = $img.width(),
-			oldWheight = $img.height(),
-			scaledWidth,
-			scaledHeight,
-			wr = oldWidth / w,
-			hr = oldWheight / h,
-			ratio;
-
-		if (oldWidth === 0 || oldWheight === 0) {
+			$slide = $img.closest('.slide');
+		if (!self.sizeImg($img)) {
 			if(tries++ < 3) {
 				console.log('no dimensions, trying again');
 				$img.trigger('load');
@@ -330,29 +329,13 @@ Slide.prototype.load = function(i) {
 			else {
 				dfd.reject('bad image, no dimensions')
 			}
-			return;
-		}
-
-		if (wr > 1 || hr > 1) {                                                 
-			ratio = Math.max(wr, hr);
-			scaledWidth = oldWidth / ratio;
-			scaledHeight = oldWheight / ratio;
 		}
 		else {
-			scaledWidth = oldWidth;
-			scaledHeight = oldWheight;
+			$slide.removeAttr('id').removeClass('offpage').addClass('hide');
+
+			slide.$slide = $slide;
+			dfd.resolve(i, $slide);
 		}
-
-		$img.css({
-			width: scaledWidth + "px",
-			height: scaledHeight + "px",
-			marginTop: (scaledHeight * -.5) + "px",
-			marginLeft: (scaledWidth * -.5) + "px"
-		});
-		$slide.removeAttr('id').removeClass('offpage').addClass('hide');
-
-		slide.$slide = $slide;
-		dfd.resolve(i, $slide);
 	}).error(function(){
 		dfd.reject('loading failed');
 	});
@@ -360,7 +343,34 @@ Slide.prototype.load = function(i) {
 	return dfd.promise();
 };
 
+Slide.prototype.sizeImg = function($img) { 
+	var w = this.width,
+		h = this.height,
+		oldWidth = $img.width(),
+		oldHeight = $img.height(),
+		scaledWidth,
+		scaledHeight,
+		wr = oldWidth / w,
+		hr = oldHeight / h,
+		ratio;
 
+	if (oldWidth === 0 || oldHeight === 0) { 
+		return false;
+	}
+                                               
+	ratio = Math.max(wr, hr);
+	scaledWidth = oldWidth / ratio;
+	scaledHeight = oldHeight / ratio;
+
+	$img.css({
+		width: scaledWidth + "px",
+		height: scaledHeight + "px",
+		marginTop: (scaledHeight * -.5) + "px",
+		marginLeft: (scaledWidth * -.5) + "px"
+	});
+
+	return true;
+};
 
 
 
@@ -375,32 +385,3 @@ $.fn.slide = function(config) {
 		new Slide($(this), config);
 	});
 };
-
-
-
-
-$(document).ready(function(){
-	$('#home-slides').slide({
-		autostart: false,
-		slides: (function(){
-			var count = 93,
-				i = 0,
-				a = new Array(count);
-			while (i < count) {
-				a[i++] = {
-					src: "img/" + (i < 10 ? "0" : "") + i + ".png"
-				}
-			}
-			return a;
-		})()
-	});
-
-	$('#picnic-slides').slide({
-		autostart: false,
-		slides: [
-			{src: "img/ebengfine_0.jpg"},
-			{src: "img/ebengfine_ropeswing.jpg"},
-			{src: "img/ebengfine_rocks.jpg"}
-		]
-	})
-});

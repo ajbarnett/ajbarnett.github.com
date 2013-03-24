@@ -90,7 +90,9 @@ Mapper.prototype.bindLocationClick = function() {
 			self.getDirections(locations)
 				.then(function(){
 					setTimeout(function(){
-						$(window).trigger('.scrollToMap');
+						$('html, body').animate({
+							scrollTop: $('#map-canvas').offset().top - 30
+						}, 1000);
 					}, 500);						
 				})
 				.fail(function(msg){
@@ -335,9 +337,3 @@ Mapper.prototype.getDirService = function() {
 
 	return service;
 };
-
-var m;
-$(document).ready(function(){
-	m = new Mapper();
-});
-

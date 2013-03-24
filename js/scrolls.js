@@ -159,5 +159,5 @@ $.fn.scrolls = function(options) {
 };
 
 $(document).ready(function(){
-	$('.main-nav').scrolls();
+	//$('.main-nav').scrolls();
 });
