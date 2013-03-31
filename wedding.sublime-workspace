@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"cont",
+				"controlsOut"
+			],
+			[
 				"fullscre",
 				"fullscreenOn"
 			],
@@ -99,7 +103,48 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 13511,
+				"buffer_size": 13539,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/jquery-1.9.1.min.js",
+			"settings":
+			{
+				"buffer_size": 92629,
+				"line_ending": "Windows",
+				"name": "/*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundati"
+			}
+		},
+		{
+			"file": "js/jquery.ba-throttle-debounce.min.js",
+			"settings":
+			{
+				"buffer_size": 731,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/sections.js",
+			"settings":
+			{
+				"buffer_size": 2378,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/nav.js",
+			"settings":
+			{
+				"buffer_size": 4224,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/slides.js",
+			"settings":
+			{
+				"buffer_size": 8927,
 				"line_ending": "Windows"
 			}
 		},
@@ -113,18 +158,10 @@
 			}
 		},
 		{
-			"file": "js/slides.js",
-			"settings":
-			{
-				"buffer_size": 8531,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "js/all.min.js",
 			"settings":
 			{
-				"buffer_size": 108800,
+				"buffer_size": 108321,
 				"line_ending": "Windows",
 				"name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy"
 			}
@@ -133,7 +170,7 @@
 			"file": "/D/Documents/other/dev/fin/js/fin.js",
 			"settings":
 			{
-				"buffer_size": 5021,
+				"buffer_size": 4917,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,26 +192,26 @@
 			}
 		},
 		{
-			"file": "js/nav.js",
+			"file": "js/html5shiv.js",
 			"settings":
 			{
-				"buffer_size": 4120,
-				"line_ending": "Windows"
+				"buffer_size": 2376,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/sections.js",
+			"file": "js/respond.min.js",
 			"settings":
 			{
-				"buffer_size": 2378,
-				"line_ending": "Windows"
+				"buffer_size": 4069,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "js/jquery.ba-throttle-debounce.min.js",
+			"file": "js/shivs.min.js",
 			"settings":
 			{
-				"buffer_size": 731,
+				"buffer_size": 5778,
 				"line_ending": "Windows"
 			}
 		}
@@ -203,6 +240,8 @@
 	},
 	"file_history":
 	[
+		"/D/Documents/GitHub/ajbarnett.github.com/package.json",
+		"/D/Documents/GitHub/ajbarnett.github.com/Gruntfile.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/basket.min.js",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/scrolls.js",
@@ -293,7 +332,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -301,15 +340,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 13511,
+						"buffer_size": 13539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								509,
-								509
+								559,
+								559
 							]
 						],
 						"settings":
@@ -325,6 +364,146 @@
 				},
 				{
 					"buffer": 1,
+					"file": "js/jquery-1.9.1.min.js",
+					"settings":
+					{
+						"buffer_size": 92629,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								92629
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundati",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 197577.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/jquery.ba-throttle-debounce.min.js",
+					"settings":
+					{
+						"buffer_size": 731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								731
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 2074.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/sections.js",
+					"settings":
+					{
+						"buffer_size": 2378,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 926.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "js/nav.js",
+					"settings":
+					{
+						"buffer_size": 4224,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								4224
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1373.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/slides.js",
+					"settings":
+					{
+						"buffer_size": 8927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								8927
+							]
+						],
+						"settings":
+						{
+							"rulers":
+							[
+								100
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"wrap_width": 100
+						},
+						"translation.x": 0.0,
+						"translation.y": 869.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "js/maps.js",
 					"settings":
 					{
@@ -358,51 +537,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "js/slides.js",
-					"settings":
-					{
-						"buffer_size": 8531,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								8531
-							]
-						],
-						"settings":
-						{
-							"rulers":
-							[
-								100
-							],
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"wrap_width": 100
-						},
-						"translation.x": 0.0,
-						"translation.y": 2547.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "js/all.min.js",
 					"settings":
 					{
-						"buffer_size": 108800,
+						"buffer_size": 108321,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								108800,
-								108800
+								108321,
+								108321
 							]
 						],
 						"settings":
@@ -410,26 +557,26 @@
 							"auto_name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 760106.0,
-						"translation.y": 0.0,
+						"translation.x": 83253.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
-						"buffer_size": 5021,
+						"buffer_size": 4917,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3938,
-								3938
+								3422,
+								3422
 							]
 						],
 						"settings":
@@ -443,7 +590,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 9,
 					"file": "css/main.css",
 					"settings":
 					{
@@ -470,7 +617,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 10,
 					"file": "css/main.min.css",
 					"settings":
 					{
@@ -497,11 +644,11 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "js/nav.js",
+					"buffer": 11,
+					"file": "js/html5shiv.js",
 					"settings":
 					{
-						"buffer_size": 4120,
+						"buffer_size": 2376,
 						"regions":
 						{
 						},
@@ -509,69 +656,67 @@
 						[
 							[
 								0,
-								4120
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 577.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "js/sections.js",
-					"settings":
-					{
-						"buffer_size": 2378,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								2378
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 926.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "js/jquery.ba-throttle-debounce.min.js",
-					"settings":
-					{
-						"buffer_size": 731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								731,
-								731
+								2376
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 2745.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "js/respond.min.js",
+					"settings":
+					{
+						"buffer_size": 4069,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								4069
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 21500.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/shivs.min.js",
+					"settings":
+					{
+						"buffer_size": 5778,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5778,
+								5778
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 39447.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -636,6 +781,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 231.0,
 	"status_bar_visible": true
 }
