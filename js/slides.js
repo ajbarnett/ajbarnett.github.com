@@ -61,17 +61,35 @@ Slide.prototype.bindControlEvents = function(){
 					});
 			}
 		},
-		$controls = $frame.find('.controls');
+		$controls = $frame.find('.controls'),
+		controlsMoving = false,
+		controlsIn = function(){
+			controlsMoving = true;
+			$controls.stop().animate({
+				bottom: "0px"
+			}, 300, function(){
+				controlsMoving = false;
+			});
+		},
+		controlsOut = function(){
+			controlsMoving = true;
+			$controls.stop().animate({
+				bottom: "-55px"
+			}, 500, function(){
+				controlsMoving = false;
+			});			
+		},
+		outTimer = 0;
 
-	$frame.mouseenter(function(){
-		$controls.stop().animate({
-			bottom: "0px"
-		}, 300);
-	}).mouseleave(function(){
-		$controls.stop().animate({
-			bottom: "-55px"
-		}, 500);
-	});
+	$frame.bind('mousemove click', $.throttle(500, function(){
+		if(!controlsMoving) {
+			controlsIn();
+		}
+		clearInterval(outTimer);
+		outTimer = setTimeout(function(){
+			controlsOut();
+		}, 1000);
+	}));
 
 	$controls.on('click', '.icon', function(e){
 		e.preventDefault();
@@ -104,7 +122,7 @@ Slide.prototype.bindControlEvents = function(){
 
 Slide.prototype.flashControls = function() {
 	var self = this;
-	setTimeout(function(){self.$frame.trigger('mouseenter');}, 1000);
+	setTimeout(function(){self.$frame.trigger('click');}, 1000);
 };
 
 Slide.prototype.play = function(){

@@ -115,18 +115,21 @@ jaNav.prototype.destroyBackToTop = function($window) {
 
 jaNav.prototype.bindNavClick = function(w) {
 	var $nav = this.$nav,
-		self = this;
+		self = this,
+		handler = function(e){ 
+			e.preventDefault();
+			var $this = $(this);
+			var secId = $this.find('a').attr('href') || $this.attr('href');
+			self.goToSection(secId);
+		};
 
 	if (!$nav.length) { return; }
 
-	$nav.on('click', 'li', function(e){ 
-		e.preventDefault();
-		var secId = $(this).find('a').attr('href');
-		self.goToSection(secId, $nav);
-	});
+	$nav.on('click', 'li', handler);
+	$('body').on('click', 'a[href^=#]', handler);
 };
 
-jaNav.prototype.goToSection = function(section, $nav) {
+jaNav.prototype.goToSection = function(section) {
 	var $section = $(section);
 
 	if (!$section.length) { return; }
