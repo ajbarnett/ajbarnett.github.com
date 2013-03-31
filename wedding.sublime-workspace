@@ -103,7 +103,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 13539,
+				"buffer_size": 14079,
 				"line_ending": "Windows"
 			}
 		},
@@ -240,6 +240,7 @@
 	},
 	"file_history":
 	[
+		"/D/Documents/GitHub/ajbarnett.github.com/index.min.html",
 		"/D/Documents/GitHub/ajbarnett.github.com/package.json",
 		"/D/Documents/GitHub/ajbarnett.github.com/Gruntfile.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/basket.min.js",
@@ -340,24 +341,25 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 13539,
+						"buffer_size": 14079,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								559,
-								559
+								13662,
+								13662
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 4035.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
