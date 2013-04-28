@@ -103,24 +103,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 14079,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/jquery-1.9.1.min.js",
-			"settings":
-			{
-				"buffer_size": 92629,
-				"line_ending": "Windows",
-				"name": "/*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundati"
-			}
-		},
-		{
-			"file": "js/jquery.ba-throttle-debounce.min.js",
-			"settings":
-			{
-				"buffer_size": 731,
+				"buffer_size": 14318,
 				"line_ending": "Windows"
 			}
 		},
@@ -240,18 +223,20 @@
 	},
 	"file_history":
 	[
+		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/CNAME",
+		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
+		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
+		"/D/Documents/GitHub/ajbarnett.github.com/js/jquery.ba-throttle-debounce.min.js",
+		"/D/Documents/GitHub/ajbarnett.github.com/js/jquery-1.9.1.min.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/index.min.html",
 		"/D/Documents/GitHub/ajbarnett.github.com/package.json",
 		"/D/Documents/GitHub/ajbarnett.github.com/Gruntfile.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/basket.min.js",
-		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/scrolls.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/main.js",
-		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/slides2.js",
 		"/D/Documents/GitHub/ajbarnett.github.com/js/html5shiv.js",
 		"/D/Documents/other/dev/fin/js/fin.js",
-		"/D/Documents/GitHub/ajbarnett.github.com/js/jquery.ba-throttle-debounce.min.js",
 		"/D/Dropbox/jbSlideshow/js/jbSlide.js",
 		"/D/Documents/other/dev/fin/index.html",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/js.js",
@@ -341,15 +326,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 14079,
+						"buffer_size": 14318,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13662,
-								13662
+								10227,
+								10227
 							]
 						],
 						"settings":
@@ -359,66 +344,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4035.0,
+						"translation.y": 2854.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "js/jquery-1.9.1.min.js",
-					"settings":
-					{
-						"buffer_size": 92629,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								92629
-							]
-						],
-						"settings":
-						{
-							"auto_name": "/*! jQuery v1.9.1 | (c) 2005, 2012 jQuery Foundati",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 197577.0,
-						"translation.y": 60.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/jquery.ba-throttle-debounce.min.js",
-					"settings":
-					{
-						"buffer_size": 731,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								731
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
-						},
-						"translation.x": 2074.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "js/sections.js",
 					"settings":
 					{
@@ -445,7 +377,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 2,
 					"file": "js/nav.js",
 					"settings":
 					{
@@ -473,7 +405,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 3,
 					"file": "js/slides.js",
 					"settings":
 					{
@@ -505,7 +437,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "js/maps.js",
 					"settings":
 					{
@@ -539,7 +471,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 5,
 					"file": "js/all.min.js",
 					"settings":
 					{
@@ -566,7 +498,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 6,
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
@@ -592,7 +524,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
 					"file": "css/main.css",
 					"settings":
 					{
@@ -603,8 +535,8 @@
 						"selection":
 						[
 							[
-								0,
-								9563
+								3031,
+								3031
 							]
 						],
 						"settings":
@@ -619,7 +551,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 8,
 					"file": "css/main.min.css",
 					"settings":
 					{
@@ -646,7 +578,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 9,
 					"file": "js/html5shiv.js",
 					"settings":
 					{
@@ -672,7 +604,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 10,
 					"file": "js/respond.min.js",
 					"settings":
 					{
@@ -698,7 +630,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 11,
 					"file": "js/shivs.min.js",
 					"settings":
 					{
@@ -782,7 +714,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 231.0,
 	"status_bar_visible": true
 }
