@@ -103,7 +103,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 14318,
+				"buffer_size": 12573,
 				"line_ending": "Windows"
 			}
 		},
@@ -161,7 +161,7 @@
 			"file": "css/main.css",
 			"settings":
 			{
-				"buffer_size": 9563,
+				"buffer_size": 9614,
 				"line_ending": "Windows"
 			}
 		},
@@ -169,7 +169,7 @@
 			"file": "css/main.min.css",
 			"settings":
 			{
-				"buffer_size": 7802,
+				"buffer_size": 7855,
 				"line_ending": "Windows",
 				"name": "html,body,div,span,applet,object,iframe,h1,h2,h3,h"
 			}
@@ -223,6 +223,9 @@
 	},
 	"file_history":
 	[
+		"/D/Documents/GitHub/ajbarnett.github.com/indexmin.html",
+		"/D/Documents/GitHub/ajbarnett.github.com/test.html",
+		"/D/Music/wedding cd/Wedding CD Label.avery",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/CNAME",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/index.html",
 		"/C/Users/lbstr/Documents/GitHub/lbstr.github.com/css/jb.css",
@@ -263,6 +266,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".page",
+			"countdown",
+			"body",
 			"javascript:;",
 			"m.",
 			"clear",
@@ -318,7 +324,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -326,15 +332,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 14318,
+						"buffer_size": 12573,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10227,
-								10227
+								6329,
+								6329
 							]
 						],
 						"settings":
@@ -344,7 +350,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2854.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -528,15 +534,15 @@
 					"file": "css/main.css",
 					"settings":
 					{
-						"buffer_size": 9563,
+						"buffer_size": 9614,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3031,
-								3031
+								1322,
+								1322
 							]
 						],
 						"settings":
@@ -545,7 +551,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2548.0,
+						"translation.y": 465.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -555,15 +561,15 @@
 					"file": "css/main.min.css",
 					"settings":
 					{
-						"buffer_size": 7802,
+						"buffer_size": 7855,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7802,
-								7802
+								1304,
+								1304
 							]
 						],
 						"settings":
@@ -571,7 +577,7 @@
 							"auto_name": "html,body,div,span,applet,object,iframe,h1,h2,h3,h",
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
-						"translation.x": 54006.0,
+						"translation.x": 8162.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
