@@ -119,7 +119,7 @@
 			"file": "js/nav.js",
 			"settings":
 			{
-				"buffer_size": 4224,
+				"buffer_size": 4532,
 				"line_ending": "Windows"
 			}
 		},
@@ -144,7 +144,7 @@
 			"file": "js/all.min.js",
 			"settings":
 			{
-				"buffer_size": 108321,
+				"buffer_size": 109105,
 				"line_ending": "Windows",
 				"name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy"
 			}
@@ -153,7 +153,7 @@
 			"file": "/D/Documents/other/dev/fin/js/fin.js",
 			"settings":
 			{
-				"buffer_size": 4917,
+				"buffer_size": 4921,
 				"line_ending": "Windows"
 			}
 		},
@@ -266,6 +266,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"$.fn.uncomment",
 			".page",
 			"countdown",
 			"body",
@@ -324,7 +325,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -350,7 +351,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 412.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -387,7 +388,7 @@
 					"file": "js/nav.js",
 					"settings":
 					{
-						"buffer_size": 4224,
+						"buffer_size": 4532,
 						"regions":
 						{
 						},
@@ -395,7 +396,7 @@
 						[
 							[
 								0,
-								4224
+								4532
 							]
 						],
 						"settings":
@@ -405,7 +406,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1373.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -454,8 +455,8 @@
 						"selection":
 						[
 							[
-								0,
-								8418
+								1429,
+								1429
 							]
 						],
 						"settings":
@@ -481,15 +482,15 @@
 					"file": "js/all.min.js",
 					"settings":
 					{
-						"buffer_size": 108321,
+						"buffer_size": 109105,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								108321,
-								108321
+								109105,
+								109105
 							]
 						],
 						"settings":
@@ -497,8 +498,8 @@
 							"auto_name": "(function(e,t){var n=e.jQuery||e.Cowboy||(e.Cowboy",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 83253.0,
-						"translation.y": 45.0,
+						"translation.x": 762322.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -508,15 +509,15 @@
 					"file": "/D/Documents/other/dev/fin/js/fin.js",
 					"settings":
 					{
-						"buffer_size": 4917,
+						"buffer_size": 4921,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2987,
-								2987
+								278,
+								278
 							]
 						],
 						"settings":
@@ -524,7 +525,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1643.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -541,8 +542,8 @@
 						"selection":
 						[
 							[
-								1322,
-								1322
+								0,
+								0
 							]
 						],
 						"settings":
@@ -551,7 +552,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 77.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -568,8 +569,8 @@
 						"selection":
 						[
 							[
-								1304,
-								1304
+								0,
+								0
 							]
 						],
 						"settings":
@@ -577,7 +578,7 @@
 							"auto_name": "html,body,div,span,applet,object,iframe,h1,h2,h3,h",
 							"syntax": "Packages/CSS/CSS.tmLanguage"
 						},
-						"translation.x": 8162.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -596,7 +597,7 @@
 						[
 							[
 								0,
-								2376
+								0
 							]
 						],
 						"settings":
@@ -622,14 +623,14 @@
 						[
 							[
 								0,
-								4069
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 21500.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -647,8 +648,8 @@
 						"selection":
 						[
 							[
-								5778,
-								5778
+								0,
+								0
 							]
 						],
 						"settings":
@@ -656,7 +657,7 @@
 							"auto_name": "",
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
-						"translation.x": 39447.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
@@ -720,7 +721,7 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 231.0,
 	"status_bar_visible": true
 }

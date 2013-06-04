@@ -19,13 +19,22 @@ if (typeof console === "undefined") {
 var Countdown = function(){
 	var $cd = $('#countdown-days'),
 		$container = $cd.closest('.countdown'),
-		daysleft = Math.floor((new Date(2013, 5, 22) - new Date) / (1000*60*60*24));
+		daysleft = Math.ceil((new Date(2013, 5, 22) - new Date) / (1000*60*60*24));
 
-	setTimeout(function(){
-		if ($(window).width() < 480) { return; }
-		$cd.text(daysleft);
-		$container.hide().removeClass('hide').fadeIn(1000);
-	}, 200);
+    if($(window).width() >= 480 && daysleft >= 0) { 
+        setTimeout(function(){
+            if (daysleft > 1) {
+                $cd.text(daysleft);
+            }
+            else if (daysleft === 1) {
+                $container.text('1 day to go!');
+            }
+            else if (daysleft === 0) {
+                $container.text('Today is the day!');
+            }
+            $container.hide().removeClass('hide').fadeIn(1000);
+        }, 400);
+    }
 };
 
 var jaNav = function(){
